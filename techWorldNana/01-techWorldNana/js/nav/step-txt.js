@@ -161,6 +161,10 @@ export function initStepNavigation(mainTargetDiv) {
                 const stepFloat = getStepFloat(e.target.parentElement)
                 const vid = stepFloat.querySelector('video')
                 console.log(e.target)
+                let key = e.key.toLowerCase()
+                if(key === 'm'){
+                    stepFloat.focus()
+                }
                 toggleVideoSize({ vid, e, steps, stepFloat })
                 handleVideo({ vid, e, steps, allVids })
             })
