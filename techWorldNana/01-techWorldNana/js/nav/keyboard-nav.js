@@ -62,6 +62,7 @@ export function initKeyboardNav({
             if (!suppressIndexUpdate) {
                 iSideBarLinks = [...sidebarLinks].indexOf(el);
             }
+            el.scrollIntoView({inline:'start'})
         });
 
         el.addEventListener("click", e => {

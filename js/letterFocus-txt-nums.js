@@ -28,7 +28,7 @@ addEventListener('keydown', e => {
         if (el.id === 'mainContainer') {
             return letter === 'm';
         }
-
+        
         const text = getCleanText(el);
         const words = text.split(/\s+/);
 
@@ -39,9 +39,6 @@ addEventListener('keydown', e => {
             if (/^\d+$/.test(cleaned) && /^[0]+[1-9]/.test(cleaned)) {
                 return cleaned[0] === letter
                     || cleaned.match(/[1-9]/)?.[0] === letter;
-            }
-            if(cleaned[0] == '0'){
-                console.log(cleaned[0])
             }
             return cleaned[0] === letter;
         });
