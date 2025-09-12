@@ -1,0 +1,21 @@
+.copy-code > span {font-weight: 999;}
+
+.copy-code > span.b {color: blue;}
+.copy-code > span.db {color: royalblue;}
+.copy-code > span.mb {color: rgb(100, 152, 236);}
+.copy-code > span.lb {color: rgb(47, 173, 201);}
+.copy-code > span.c  {color: cyan;}
+p > code.dc,
+p > span.dc,
+.copy-code > span.dc {color: darkcyan;}
+.copy-code > span.g {color: green;}
+.copy-code > span.l {color: lime;}
+.copy-code > span.gr {color: goldenrod;}
+.copy-code > span.lsg {color: lightseagreen;}
+.copy-code > span.gold {color: gold;}
+.copy-code > span.m {color: magenta;}
+.copy-code > span.y {color: rgb(173, 173, 66);}
+.copy-code > span.o {color: orange;}
+.copy-code>span.r {color: red}
+.copy-code > span.lr {color: rgb(205, 122, 122);}
+.copy-code > span.tom {color: tomato;}

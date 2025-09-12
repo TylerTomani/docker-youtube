@@ -1,0 +1,21 @@
+.page-header .header-col-left>.header-nav a {
+    border-top:1px solid black;
+    border-right:1px solid black;
+}
+
+#navLessonTitle {
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+.side-bar{
+    border-right: 1px solid black;
+}
+#sideBarBtn {
+}
+/* Lessons */
+.code-container>pre.copy-code {
+    border: 1px solid black;
+}
+.step-float {
+    border: 1px solid black !important;
+}

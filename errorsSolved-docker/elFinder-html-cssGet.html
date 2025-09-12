@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>elFinder-css-get-draft</title>
+	<!-- Base Styles -->
+	<link rel="stylesheet" href="css/main.css" />
+	<script type="module" src="js/main-script.js" defer></script>
+	<!-- Scripts (deferred and modular, not loaded yet) -->
+	<!-- <script type="module" src="../js/letterFocus-elFinder-boiler-plate.js" defer></script> -->
+	<!-- <script type="module" src="../js/copy-code-elFinder-boiler-plate.js" defer></script> -->
+	<!-- <script type="module" src="../../../js/dark-mode.js" defer></script> -->
+	<!-- <script type="module" src="../js/load-textarea-code-draft.js" defer></script> -->
+
+	<!-- <script src="js/handlers/remove-whitespace-txt.js" defer></script> -->
+	
+	
+</head>
+<body class="">
+	<div class="page-container">
+		<main class="main-content">
+			<!-- Header -->
+			<section class="header-tools-container">
+				<div class="page-intro-browser-tool">
+					<header>
+						<h2 class="bg-version">elFinder-css-get-draft</h2>
+						<a id="vibeCode" target="_blank" href="https://tylertomani.github.io/vibe-coding-project/">vibe coding</a>
+					</header>
+					<div id="findElements" class="version-elements-container">
+						<div class="browser-tools-code">
+							<div  class="tool-code">
+								<h3>get css from element - js script</h3>
+								<p></p>
+								<nav>
+									<button id="nextBrowserTool">next browser tool</button>
+								</nav>
+								<div  class="code-scroll">
+									<pre tabindex="0" id="mainCode" class="code-block copy-code">
+										<code  class="copy-code language-js">
+<!-- function getComputedStylesString(el) {
+	const styles = window.getComputedStyle(el);
+	let result = "";
+	for (let prop of styles) {
+		result += `${prop}: ${styles.getPropertyValue(prop)};\n`;
+	}
+	return result;
+}
+// Run on the element you inspected:
+copy(getComputedStylesString($0)); -->
+										</code>
+									</pre>
+								</div>
+							</div>
+						</div>
+						<article>
+							<p>When done, make into extension in:</p>
+							<div class="code-container">
+								<pre tabindex="0">chrome://extensions/</pre>
+							</div>
+							<p>The script to the top right will get the css from the currently clicked/active 
+								element on the page, <span class="r">After getting this page working
+									allow for pasting css right here to save, and it's element
+								</span>
+							</p>
+						</article>
+						<div class="version-css-selectors-container">
+							<div class="code-container">
+								<!-- <a class="black-click-img-box"></a> -->
+								<h4>Load Unpack</h4>
+								<textarea readonly data-img="images/01.png" tabindex="0" class="copy-code">TBD</textarea>
+							</div>
+							<div class="code-container">
+								<!-- <a class="black-click-img-box"></a> -->
+								<h4>Remove</h4>
+								<pre readonly data-img="images/02.png" tabindex="0" class="copy-code">
+<span class="r">&lt;cr-button id="removeButton" ...>Remove&lt;/cr-button></span>
+								</pre>
+							</div>
+							<div class="code-container ">
+								<!-- <a class="black-click-img-box"></a> -->
+								<pre readonly data-img="images/03.png" tabindex="0" class="copy-code">
+<span class="b">items-container</span> <span class="m">extensions-item</span> <span class="r">#removeButton</span>
+								</pre>
+							</div>
+							<div class="code-container">
+								<!-- <a class="black-click-img-box"></a> -->
+								<h3>3b. get all remove btn</h3>
+								<p>for now, query all remove buttons in:</p>
+								<pre readonly data-img="images/03.png" tabindex="0" class="copy-code">
+<!-- Trimmed large code block for clarity -->
+<span class="b">&lt;div class="items-container"></span>
+...
+<span class="r">&lt;cr-button id="removeButton" ...>Remove&lt;/cr-button></span>
+								</pre>
+							</div>
+							<!-- Separate image element outside versions -->
+							<img id="elementImg" src="images/01.png" alt="Popup Element Image" />
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- Main content with version controls -->
+			<div class="version-container">		
+				<header>
+					<a tabindex="0" id="backBtn">back</a>
+					<h2 id="versionTitle">TBD</h2>
+					<a tabindex="0" id="nxtBtn">next</a>
+				</header>
+				<!-- Version components -->
+				<div  class="version active" data-version="0">
+					<div class="test-script-tools-container">
+						<!-- Browser Tools -->
+						<!-- Main Test script -->
+						<div class="main-script-container  ">
+							<textarea id="versionScript" tabindex="0" class="copy-code">
+	Gonna change this part to show pic of element and css that goes with it 
+							</textarea>
+						</div>
+					</div>
+					<!-- Code blocks for this version -->
+					<!-- Note: elementImg stays outside of versions, controlled separately -->
+					
+				</div>
+				<!-- Add more .version blocks here for other versions -->
+				<a tabindex="0" id="backToTopBtn" href="#top">end to Top</a>
+			</div>	 
+		</main>
+		 <!-- Footer (Mobile Header Style) -->
+		 <!-- <footer class="mobile-footer-header">
+			 <div class="main-links">
+				 <a tabindex="0" id="homelink" href="https://tylertomani.github.io/myWebSite/index.html">Home (main)</a>
+			 </div>
+			 <div class="main-links">
+				 <a tabindex="0" id="codeComandShortcuts" target="_blank" href="https://tylertomani.github.io/myWebSite/webPages/codeComShortcuts/codeComShortcuts.html">
+					 <sub>code command shortcuts</sub>
+				 </a>
+				 <a tabindex="0" id="chatGpt" target="_blank" href="https://tylertomani.github.io/myWebSite/webPages/chatGpt-questions/index.html">
+					 chatGpt Questions
+				 </a>
+			 </div>
+		 </footer> -->
+	</div> <!-- .page-container -->
+</body>
+</html>
+

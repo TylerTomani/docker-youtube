@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+ <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>fix-docker-install</title>
+    <link rel="stylesheet" href="css/main-fix-docker.css">
+    <link rel="stylesheet" href="css/components/mobile-footer-header.css">
+    <link rel="stylesheet" href="css/copyCode.css">
+    <script type="module" src="js/nav/step-txt.js" defer></script>
+    <script type="module" src="js/ui/dark-mode.js" defer></script>
+    <script type="module" src="js/ui/copy-code.js" defer></script>
+</head>
+<!-- <body class="dark-mode"> -->
+<body class="">
+    <div tabindex="0" id="mainTargetDiv">
+        <header class="page-header">
+            <h1 id="pageH1">fix-docker-install</h1>
+        </header>
+        <div class="main-container">
+            <header>
+                <h3 id="targetHeaderh3" >4. Run Install Image on Container</h3>
+            </header>
+            <div class="steps-container">
+                <!-- 01 -->
+                <div tabindex="0" class="step-float" data-video="https://www.youtube.com/watch?app=desktop&v=pg19Z8LL06w" 
+                data-timestamp="1276">
+                    <div class="step-img">
+                        <img src="images/02.png">
+                    </div>
+                    <div  class="step-txt ">
+                        <h4>01 - problem</h4>
+                        <p class="r"> 
+                            I guess my sym link for the  docker desktop app with it's link nested in local was wrong
+                        </p>
+                        <p>
+                            When I look in the  docker directory in <code>/usr/local/bin/docker</code>
+                            <br>
+                            with,
+                        </p>
+                        <div class="code-container">
+                            <pre readonly tabindex="0" class="read-only">
+ls -l /usr/local/bin/docker </pre>
+                        </div>
+                        <p>
+                            I got
+                        </p>
+                        <div class="code-container ">
+                        <pre readonly tabindex="0" class="read-only">
+<span class="gr">l</span>rwxr-xr-x@ 1 root admin 153 Sep 7 07:49 /usr/local/bin/docker ->
+<span class="r">/private/var/folders/0n/6x9nyw2j7nzc7qhcp_rp_nfh0000gn/T/AppTranslocation/3F4B9AB1-7878-4472-8A27-9064923E4940/d/Docker.app/Contents/Resources/bin/docker/private/var/folders/0n/6x9nyw2j7nzc7qhcp_rp_nfh0000gn/T/AppTranslocation/3F4B9AB1-7878-4472-8A27-9064923E4940/d/Docker.app/Contents/Resources/bin/docker</span>
+                                                </pre>
+                        </div>
+                    </div>
+                    <div class="step-txt clear">
+                        <p>
+                            Where you can see that is a sym link notated with <span class="gr">l</span> at beggining,
+                            and the path <code
+                                class="r">/private/var/folders/0n/6x9nyw2j7nzc7qhcp_rp_nfh0000gn/T/AppTranslocation/3F4B9AB1-7878-4472-8A27-9064923E4940/d/Docker.app/Contents/Resources/bin/docker</code>
+                            is linked to the wront docker app,
+                        </p>
+                        <div class="code-container">
+                            <pre readonly tabindex="0"  class="read-only">
+lrwxr-xr-x@ 1 root admin 153 Sep 7 07:49 /usr/local/bin/docker ->/private/var/folder <div class="span r">
+/private/var/folders/0n/6x9nyw2j7nzc7qhcp_rp_nfh0000gn/T/AppTranslocation/3F4B9AB1-7878-4472-8A27-9064923E4940/d/Docker.app/Contents/Resources/bin/docker
+                        </div>
+                                                    </pre>
+                        </div>
+                    </div>
+                </div>
+                <!-- 02   -->
+                <div tabindex="0" class="step-float" data-video="https://www.youtube.com/watch?app=desktop&v=pg19Z8LL06w" 
+                data-timestamp="1276">
+                    <div class="step-img">
+                        <img src="images/02.png">
+                    </div>
+                    <div  class="step-txt ">
+                        <h4>02 Solution</h4>
+                        <div class="txt-container">
+                            <h5>🔧 3. The fix</h5>
+                            <p>
+                                You need /usr/local/bin/docker to point to the real binary inside your installed Docker Desktop app, not the
+                                translocated one.
+                            </p>
+                            <h6>1Remove the bad symlink:</h6>
+                        </div>
+
+                        <div class="code-container">
+                            <pre readonly tabindex="0" class="copy-code">
+sudo rm /usr/local/bin/docker</pre>
+                        </div>
+                        <div class="txt-container">
+                            <h6>2. Create a new one pointing to the real Docker CLI inside Applications:</h6>
+                        </div>
+                        <div class="code-container">
+                            <pre readonly tabindex="0" class="copy-code">
+sudo ln -s /Applications/Docker.app/Contents/Resources/bin/docker /usr/local/bin/docker</pre>
+                        </div>
+                        <p>
+                            Test it:
+                        </p>
+                        <div class="code-container">
+                            <pre readonly tabindex="0" class="copy-code">
+docker</pre>
+                        </div>
+                        <p>or</p>
+                        <div class="code-container">
+                            <pre readonly tabindex="0" class="copy-code">
+docker --version</pre>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            </div>
+        </div>
+        <!-- Footer (Mobile Header Style) -->
+        <footer class="mobile-footer-header">
+            <div class="main-links">
+                <a tabindex="0" id="backlink" href="../docker-youtube.html">back (docker-youtube)</a>
+                <a tabindex="0" id="homelink" href="https://tylertomani.github.io/homepage-2025/">Home (main)</a>
+            </div>
+            <div class="main-links">
+                <a tabindex="0" id="codeComandShortcuts" target="_blank" href="https://tylertomani.github.io/codeCmdShortcuts/">
+                    <sub>code command shortcuts</sub>
+                </a>
+                <a tabindex="0" id="chatGpt" target="_blank" href="https://tylertomani.github.io/myWebSite/webPages/chatGpt-questions/index.html">
+                    chatGpt Questions
+                </a>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

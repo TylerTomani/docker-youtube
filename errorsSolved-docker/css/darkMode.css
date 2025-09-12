@@ -1,0 +1,54 @@
+
+:root {
+    --bg-primary-db: #201d1d;
+    --font-primary-db: whitesmoke;
+}
+#darkModeBtn {}
+.lesson-btns-container>button {
+    background: rgb(148, 164, 134);
+}
+.dark-mode {background-color: var(--bg-primary-db);}
+.dark-mode .page-header .header-col-left>.header-nav a {    
+    color:  whitesmoke !important;
+    border: 1px solid whitesmoke !important;
+}
+.dark-mode .page-header .header-col-left>.header-nav a:visited {border: 1px solid whitesmoke;}
+.dark-mode a:visited {
+    color: whitesmoke;
+}
+.dark-mode main>aside.side-bar {
+    border-right: 1px solid whitesmoke;
+}
+.dark-mode .section-container>.section {color: var(--font-primary-db);}
+.dark-mode,
+.dark-mode p {color: whitesmoke;}
+.dark-mode .sidebar-links-ul li a {color: white !important;}
+.dark-mode #navLessonTitle {
+    border: 0;
+    border-bottom: 1px solid white;
+}
+.dark-mode .page-header .header-top-row .header-nav a,
+.dark-mode .page-header .header-top-row .header-nav a {color: whitesmoke } 
+.dark-mode .page-header .header-top-row .header-nav a:focus,
+.dark-mode .page-header .header-top-row .header-nav a:active{color: black !important;
+}
+.dark-mode .code-container {
+}
+.dark-mode .code-container textarea,
+/* .dark-mode .code-container, */
+.dark-mode .code-container>.copy-code {
+    border: 1px solid white;
+    background-color: var(--bg-primary-db);
+    color: white;
+}
+.dark-mode .lesson-btns-container>button {
+    background: rgb(148, 164, 134) ;
+}
+.dark-mode img {
+    border: none !important;
+}
+.dark-mode img.enlarge {
+    border-top: 1px solid whitesmoke    !important;
+    border-bottom: 1px solid whitesmoke !important;
+
+}

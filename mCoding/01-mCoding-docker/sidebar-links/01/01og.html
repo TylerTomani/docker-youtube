@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+ <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>01-intro</title>
+</head>
+<body class="dark-mode">
+    <div id="targetDiv">
+        <header>
+            <h3 id="targetHeaderh3">1. installing docker</h3>
+        </header>
+        <div class="main-container">
+            <div class="steps-container">
+                <!-- 1.-->
+                <div tabindex="0" class="step-float" data-video="https://www.youtube.com/watch?v=b0HMimUb4f0" 
+                data-timestamp="323">
+                    <div class="step-vid">
+                        <!-- <video tabindex="-1" controls  -->
+                        <video playsinline webkit-playsinline poster="sidebar-links/01/images/01.png"
+                            src="sidebar-links/01/images/01.mov"></video>
+                    </div>
+                    <div class="step-txt ">
+                        <h4>01</h4>
+                        <p>
+                            Download and OPEN dmg file from this link 
+                            <a target="_blank" tabindex="0" href="https://docs.docker.com/get-started/get-docker/#:~:text=You%20can%20download%20and%20install%20Docker%20on%20multiple%20platforms.%20Refer%20to%20the%20following%20section%20and%20choose%20the%20best%20installation%20path%20for%20you.
+                            ">Docker Doc</a>,
+                            install , **read specifics on intel chip in your case
+                        </p>
+                        <p> make sure you system is up to date</p>
+                        <div class="code-container">
+                            <pre readonly tabindex="0" class="copy-code">
+brew update</pre>
+                        </div>
+                        <h5>linux</h5>
+                        <div class="code-container">
+                            <pre readonly tabindex="0" class="copy-code">
+sudo apt update</pre>
+                        </div>
+                        <p>
+                            if you don't have homebrew
+                        </p>
+                        <div class="code-container">
+                            <pre readonly tabindex="0" class="copy-code">
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+                        </pre>
+                        </div>
+                        
+                        
+                         <p>
+                            run these commands, to install in command line
+                         </p>
+                        <div class="code-container ">
+                            <pre readonly tabindex="0" class="copy-code">
+sudo hdiutil attach Docker.dmg
+sudo /Volumes/Docker/Docker.app/Contents/MacOS/install
+sudo hdiutil detach /Volumes/Docker</pre>
+                        </div>
+                        <sub>**this didn't work for me, just clicked dmg</sub>
+                    </div>
+                </div>
+                <div tabindex="0" class="step-float" data-video="https://www.youtube.com/watch?v=b0HMimUb4f0" 
+                data-timestamp="327">
+                    <div class="step-img">
+                        <img src="sidebar-links/01/images/02.png">
+                    </div>
+                    <div class="step-txt">
+                        <h4>02</h4>
+                        <p> make sure you system is up to date</p>
+                        <div class="code-container">
+                            <pre readonly tabindex="0" class="copy-code">
+brew update
+                            </pre>
+                        </div>
+                        <h5>linux</h5>
+                        <div class="code-container">
+                            <pre readonly tabindex="0" class="copy-code">
+sudo apt update
+                            </pre>
+                        </div>
+                        <p>
+                            if you don't have homebrew
+                        </p>
+                        <div class="code-container">
+                            <pre readonly tabindex="0" class="copy-code">
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+</pre>
+                        </div>
+                    </div>
+                </div>
+                <!-- 2. -->
+                
+                <!--?. -->
+                <div tabindex="0" class="step-float" data-video="https://www.youtube.com/watch?v=b0HMimUb4f0" data-timestamp="264">
+                    <div class="step-img">
+                        <img src="sidebar-links/01/images/03.png">
+                    </div>
+                    <div class="step-txt">
+                        <h4>03?</h4>
+                        <p>
+                            start with <b>Docker Desktop </b>, for begginers with GUI
+                            eventually move on to <b>Docker Engine</b> command line, no GUI
+                        </p>
+                
+                        <sub>**pic from video click top right img for link</sub>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        </div>
+    </body> 
+    </html> 

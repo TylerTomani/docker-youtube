@@ -1,0 +1,48 @@
+/* responsive.css */
+/* @media screen and (max-width: 601px) {
+    .step-float .step-txt p {
+        margin: 2.5% 0 ;
+        line-height: 1.6;
+    }
+    .step-float .step-img>img.enlarge {
+        max-height: 40vh;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -65%) scale(1.8) !important;
+    }
+    .imgs-container .step-img>img.enlarge {    
+        top: 0%;
+        left: 0%;
+        transform: translate(-20%, -80%) scale(1.8) !important;
+    }
+}
+.step-float p {
+    } 
+    main.main-container.collapsed #sideBarBtn {
+        position: absolute;
+        bottom: 12%;
+        left: 50%;
+        z-index: 9999 !important;
+        }
+        } */
+        
+@media screen and (max-width: 650px) {
+    .side-bar {
+        position: fixed;
+        font-size: 80%;
+        width: 20% !important;
+    }
+    #sideBarBtn{
+        /* left: 120%; */
+    }
+    
+    .step-txt,
+    .step-float{
+        padding: 0
+    }
+}
+@media screen and (max-width: 499px) {
+    .step-vid video.enlarge {
+            /* transform: translate(-50%, -10%) scale(2.5) !important; */
+    }
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+ <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>07-</title>
+</head>
+<body class="dark-mode">
+    <div id="targetDiv">
+        <div class="main-container">
+            <header>
+                <h3 id="targetHeaderh3">9. Destructure <code class="y">{}</code> from module <code>require('')</code></h3>
+            </header>
+            <div class="steps-container">
+                <!-- 01 -->
+                <div tabindex="0" data-video="https://www.youtube.com/watch?v=JZXQ455OT3A" 
+                data-timestamp="840" class="step-float">
+                    <div class="step-img">
+                        <img src="sidebar-links/09/images/01.png" alt="">
+                    </div>
+                    <div class="step-txt ">
+                        <h4>01</h4>
+                        <p class="">
+                            Use <code class="m">{}</code> to destructe individual variables fron module
+                        </p>
+                        <div class="code-container">
+                            <pre tabindex="0" class="copy-code">                 
+const <span class="m">{ </span>subtract, divide <span class="m">}</span> = require('./math')
+console.log(subtract(10,5))
+console.log(divide(87,10))</div>
+                    </div>
+                
+                </div>
+                <!-- 02 -->
+                <div tabindex="0" data-video="https://www.youtube.com/watch?v=JZXQ455OT3A" 
+                data-timestamp="944" class="step-float">
+                    <div class="step-img">
+                        <img src="sidebar-links/09/images/02.png" alt="">
+                    </div>
+                    <div class="step-txt ">
+                        <h4>02</h4>
+                        <p class="">
+                            In modules like <code>math.js</code>,You can  use <code><span class="dc">exports</span>.</code> in modules instead of module.exports
+                        </p>
+                        <p>
+                            you must use specific path when not using <b>Common Core Modules</b>. <span class="r"></span>
+                            <span class="tom">You do not need <code>.js</code></span>
+                        </p>
+                        <div class="code-container">
+                            <pre tabindex="0" class="copy-code">
+<span class="dc">exports</span>.const add = (a,b) => a + b
+<span class="dc">exports</span>.const subtract = (a,b) => a - b
+<span class="dc">exports</span>.const multiply = (a,b) => a * b
+<span class="dc">exports</span>.const divide = (a,b) => a / b</pre>
+
+                        </div>
+                    </div>
+                
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

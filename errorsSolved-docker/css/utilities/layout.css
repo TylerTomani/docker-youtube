@@ -1,0 +1,120 @@
+/* layout.css */
+body{
+    overflow-x: hidden;
+}
+.page-header {
+    position: fixed;
+    top: 0;
+}
+#mainTargetdiv{
+    overflow: hidden;
+    overflow-y: scroll;
+}
+.page-wrapper {
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+.page-header {
+    display: flex;
+}
+#navLessonTitle{
+    display: flex;
+    /* flex-grow: 1; */
+    align-content: center;
+}
+.page-header .header-col-left{
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 80vw;
+}
+.page-header .header-logo-actions-right{
+    display: flex;
+    flex-direction: column;
+    flex: 0 1 20vw;
+}
+.page-header .header-logo-actions-right a {
+    display: inline-flex;
+    justify-content: flex-end;
+}
+.page-header .header-logo-actions-right a img{
+    width: 100%;
+    max-width: 200px;
+    /* max-height: 80px; */
+    height: 100%;
+
+}
+
+.page-header .header-col-left>.header-nav {
+    display: flex;
+    flex-direction: column;
+}
+.page-header .header-col-left>.header-nav > * {
+    display: flex;
+    justify-content: center;
+    flex-basis: 50%;
+    align-items: center;
+}
+.page-header .header-col-left>.header-nav a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+#mainTargetDiv>.main-container {
+    /* overflow-x: hidden; */
+}
+/* Main content scrollable */
+#targetDiv {
+    height: 100vh;
+    width: 100vw;
+    /* full viewport height */
+    overflow-y: scroll;
+    /* allow scrolling */
+    overflow-x: hidden;
+
+}
+
+#targetDiv>.main-container {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+#targetDiv>.main-container>header {}
+
+.sidebar-links-ul{
+    overflow-x: hidden;
+}
+.home-page .imgs-container .img-container {
+    flex-basis: 50%;
+    /* background-color: blue; */
+}
+.lesson-btns-container {
+    /* position: fixed; */
+    display: flex;
+}
+/* lessons injectContent() */
+.step,
+.step-float {
+    /* flex-grow: 1; */
+    overflow-y: scroll;
+}
+.step-float>.step-txt {
+    flex-grow: 1;
+    overflow: hidden;
+    overflow-y: scroll;;
+}
+
+
+.code-container>pre.copy-code {
+
+    overflow-x: scroll;
+    /* or any height you like */
+    white-space: pre;
+    /* keep formatting but allow scroll */
+    flex-grow: 1;
+}
+.code-container>textarea.copy-code{
+    overflow: scroll;
+    flex-grow: 1;
+}

@@ -1,0 +1,36 @@
+p > .r{color: red !important;}
+p > .tom{color: tomato !important;}
+.step-txt p .gr{color: goldenrod;}
+p>code.lb,
+p>span.lb {color: rgb(47, 173, 201);}
+p>code.m,
+p>span.m {color: magenta !important
+}
+p>code.y,
+p>span.y {color: rgb(172, 172, 53) !important}
+p>code.o,
+p>span.o {
+    color: orange !important
+}
+p>code.mb,
+p>span.mb {
+    color: rgb(110, 136, 214) !important;
+}
+.sidebar-links-ul li a,:visited,
+.page-header .header-col-left>.header-nav a:visited {color: black;}
+.sidebar-links-ul li a,
+.page-header .header-col-left>.header-nav a {color: black;}
+
+
+/* Lessons injectContent()*/
+
+.code-container> textarea,
+.code-container>pre.copy-code {
+    background-color: whitesmoke;
+}
+
+
+#targetDiv>.main-container>header {
+    
+    
+}

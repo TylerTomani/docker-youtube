@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>docker-youtube</title>
+    <link rel="stylesheet" href="../css/css-index/page-header.css">
+    <link rel="stylesheet" href="css/footer-double-link-header.css">
+    <link rel="stylesheet" href="css/main-docker.css">
+    <!-- <link rel="stylesheet" href="../css/css-index/sub-drop-topics-container.css"> -->
+    <link rel="stylesheet" href="../css/css-index/dark-mode-index.css">
+    <link rel="stylesheet" href="../css/copy-code-fcc.css">
+    <script src="js/letterFocus-txt-nums.js" defer></script>
+
+    <script src="../js/js-index/dropTopics-topic-resource.js" defer></script>
+    <script src="../js/js-index/dark-mode-index.js" defer></script>
+    <script src="../js/copy-code.js" defer></script>
+</head>
+
+<!-- <body class="dark-mode"> -->
+<body class="">
+    <!-- This script only works initially if inside DOMContentLoaded -->
+    <div class="page-wrapper">
+        <header class="page-header">
+            <div class="page-title ">
+                <h1>docker-youtube</h1>
+                
+                    <img src="https://www.gstatic.com/youtube/img/promos/growth/c81b5546515db139dd72ba0e35474c4b9381a82c4f36701326e9beffe097b6f2_244x112.webp"
+                        alt="">
+                    <h1>youtube-resources</h1>
+            </div>
+            
+        </header>
+        <main>
+            <div class="topics-container">
+                <h2 tabindex="0" id="topics">Topics</h2>
+                <!-- basics -->
+                <div class="topic-container ">
+                    <header tabindex="0" id="basics" class="drop-topic">
+                        <h3>basics</h3>
+                    </header>
+                    <ul class="sub-resources-container show">
+                        <li>
+                            <a tabindex="0" id="mCodingDocker" class="resource "
+                                href="mCoding/01-mCoding-docker/01-mCoding-docker.html">01
+                                mCoding-Docker
+                                <img
+                                    src="https://i.ytimg.com/vi/b0HMimUb4f0/maxresdefault.jpg">
+                            </a>
+                            <a tabindex="0" id="techWorldNana" class="resource "
+                                href="techWorldNana/01-techWorldNana/01-techWorldNana.html">02
+                                TechWorld with Nana
+                                <img
+                                    src="https://i.ytimg.com/vi/pg19Z8LL06w/maxresdefault.jpg">
+                            </a>
+                            <a tabindex="0" id="techWorldNana" class="resource r"
+                                href="errorsSolved-docker/fix-docker-install.html">fix install error sovled
+                                <!-- <img
+                                    src="https://i.ytimg.com/vi/pg19Z8LL06w/maxresdefault.jpg"> -->
+                            </a>
+                        </li>
+                        
+
+                    </ul>
+                </div>
+            </div>
+            <div id="mainPageContentContainer" class="main-page-content-container"> 
+                <span class="tom">GO back and fix this up</span>
+                <div class="chat-gpt-question-container">
+                    <h2>1. Uninstall Docker Desktop (GUI app)</h2>
+                    <h2 class="r">***<span class="tom">MAKE SURE</span> about right directory</h2>
+                    <div class="txt-container">
+                        <p>
+                            If you downloaded Docker Desktop from docker.com:
+                        </p>
+                        <h2>Quit Docker Desktop:</h2>
+                        <p>Click the Docker whale icon in the menu bar → Quit Docker Desktop.
+                            Move the app to Trash:</p>
+                        <p>
+                            Go to Applications → drag Docker.app to the Trash.
+                        </p>
+
+                        <p>Remove support files:
+                        <br><strong> Open Terminal and run:</strong>
+                        </p>
+                    </div>
+                    <div class="code-container">
+                        <pre readonly tabindex="0" class="copy-code">
+    rm -rf ~/Library/Containers/com.docker.docker
+    rm -rf ~/Library/Containers/com.docker.helper
+    rm -rf ~/.docker
+    rm -rf ~/Library/Group\ Containers/group.com.docker
+    rm -rf ~/Library/Preferences/com.docker.docker.plist
+    rm -rf ~/Library/Logs/Docker*
+    rm -rf ~/Library/Caches/com.docker.docker
+                                    </pre>
+                    </div>
+                    <div class="code-container">
+                        <pre readonly tabindex="0" class="copy-code">
+    rm -rf ~/Library/Containers/com.docker.vmnetd
+    rm -rf /private/var/tmp/com.docker.vmnetd.socket
+                                    </pre>
+                    </div>
+                    <h2>2. Uninstall Docker installed via Homebrew</h2>
+                    <div class="txt-container">
+                        <p>
+                            If you used Homebrew (brew install --cask docker):
+                        </p>
+                    </div>
+                    <div class="code-container">
+                        <pre readonly tabindex="0" class="copy-code">
+    brew uninstall --cask docker
+                                    </pre>
+                    </div>
+                    <h2>3. Remove images, volumes, and networks (if you want a total reset)</h2>
+                    <div class="code-container">
+                        <pre readonly tabindex="0" class="copy-code">
+    docker system prune -a --volumes</pre>
+                    </div>
+                </div>
+                <div class="chat-gpt-question-containe">
+                    <div class="txt-container">
+                        <p>
+                            On macOS, ~/Library is a hidden folder, so you won’t see Library/Containers in Finder unless you reveal it. That’s why
+                            it looks like it’s missing.
+                        </p>
+                    </div>
+                    <div class="txt-container">
+                        <p>
+                            Here are two ways to deal with it:
+                        </p>
+                        <h3>🔹 Option 1: Open Library in Finder</h3>
+                        <p>
+                            In Finder, click Go in the menu bar.
+                            
+                            Hold down the Option (⌥) key → you’ll see Library appear.
+                            
+                            Click it → now you can navigate to Library/Containers.
+                        </p>
+                        <h3>🔹 Option 2: Use Terminal (easier)</h3>
+                        <p>
+                            You don’t need to manually browse — just run this one-liner in Terminal to wipe Docker Desktop and all its leftover
+                            files:
+                        </p>
+                    </div>
+                    <div class="code-container">
+                        <pre readonly tabindex="0" class="copy-code">
+rm -rf /Applications/Docker.app \
+~/Library/Containers/com.docker.docker \
+~/Library/Containers/com.docker.helper \
+~/Library/Containers/com.docker.vmnetd \
+~/Library/Group\ Containers/group.com.docker \
+~/Library/Preferences/com.docker.docker.plist \
+~/Library/Logs/Docker* \
+~/Library/Caches/com.docker.docker \
+~/.docker \
+/private/var/tmp/com.docker.vmnetd.socket</pre>
+                    </div>
+                    <div class="code-container">
+                        <pre readonly tabindex="0" class="copy-code">
+brew uninstall docker
+brew uninstall docker-compose
+                        </pre>
+                    </div>
+                    <p>
+                        (should return “command not found” if fully removed)
+                    </p>
+                    <div class="code-container">
+                        <pre readonly tabindex="0" class="copy-code">
+which docker
+docker --version
+                        </pre>
+                    </div>
+                </div>
+            </div>
+
+            
+        </main>
+        <nav class="styles-btns">
+            <div class="btn-container">
+                <button id="darkmodeBtn">darkmodeBtn</button>
+                <p>(<span class="lg-txt">⇧</span> + D )</p>
+            </div>
+        </nav>
+        <footer class="footer-header">
+            <div class="main-links">
+                <a tabindex="0" id="backlink"
+                    href="https://tylertomani.github.io/youtube-resources/">&larr;back (youtube-resource)
+                    (youtube- resources)</a>
+                <a tabindex="0" id="homelink" href="https://tylertomani.github.io/homepage-2025/">Home (homepage-2025)</a>
+            </div>
+            <div class="main-links">
+                <a tabindex="0" id="codeComandShortcuts" target="_blank" href="https://tylertomani.github.io/myWebSite/webPages/codeComShortcuts/codeComShortcuts.html
+                                                                    "><sub>code comand shortcuts</sub></a>
+                <a tabindex="0" id="chatGpt" target="_blank" href="https://tylertomani.github.io/myWebSite/webPages/chatGpt-questions/index.html
+                                                        ">chatGpt
+                    Questions</a>
+            </div>
+            <!-- <y789 class="vc">\</y789>  -->
+        </footer>
+    </div>
+</body>
+
+</html>]

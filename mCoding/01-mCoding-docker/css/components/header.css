@@ -1,0 +1,55 @@
+:root{
+  --header-height: 14vh;
+  --links-offset: 4%;
+}
+/* ====================
+   Header Component
+==================== */
+.page-header {
+  display: flex; 
+  overflow-y: hidden;
+}
+/* ... rest of your header.css unchanged ... */
+/* Keep header-nav and logo actions as before */
+.page-header .header-top-row {
+  flex-basis: 90%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.page-header > .header-top-row > .header-nav {
+    width: 100%;
+    display: flex;
+}
+#navLessonTitle {
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  padding-left: 1%;
+  flex-grow: 1;
+  /* height: 2vh !important; */
+  font-size: .8rem;
+
+}
+/* You can adjust width by using max-width if needed */
+#navLessonTitle .nav-lesson {
+  /* white-space: nowrap; */
+  /* overflow: hidden; */
+  /* text-overflow: ellipsis; */
+}
+.page-header .header-nav > .home-links,
+.page-header .header-nav > .web-links {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    flex-basis: 50%;
+    flex-grow: 1;
+}  
+/* New: navLessonTitle below header-nav and logo */
+.page-header .header-logo-actions > a#tutorialLink{
+    display: flex;
+    justify-content: flex-end;
+}
+.page-header .header-logo-actions img{
+    max-height: 100px;
+}

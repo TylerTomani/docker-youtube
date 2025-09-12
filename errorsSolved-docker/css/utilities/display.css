@@ -1,0 +1,8 @@
+.code-container>pre.copy-code {
+
+    display: block;
+}
+.clear{
+    clear: both;
+    /* border: 2px solid blue; */
+}

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+ <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>04-</title>
+</head>
+<body class="dark-mode">
+    <div id="targetDiv">
+        <div class="main-container">
+            <header>
+                <h3 id="targetHeaderh3">6. Common Core Module <code>require('path')</code></h3>
+            </header>
+            <div class="steps-container">
+                <!-- 01 -->
+                <div tabindex="0" data-video="https://www.youtube.com/watch?v=JZXQ455OT3A" data-timestamp="598" class="step-float">
+                    <div class="step-img">
+                        <img src="sidebar-links/06/images/01.png" alt="">
+                    </div>
+                    <div class="step-txt ">
+                        <h4>03</h4>
+                        <p>
+                            <b>NOTICE</b>,
+                            <code>path.dirname(__filename)</code> is the same thing
+                            as <code>__dirname</code>
+                            There are multiple way to get to info.
+                        </p>
+                        <p>
+                            <code class="o">'path'</code> gives us more info to access
+                        </p>
+                        <div class="code-container">
+                            <pre readonly tabindex="0" class="copy-code">
+const <span class="mb">os</span> = <span class="y">require</span>('<span class="os">os</span>')
+const <span class="mb">path</span> = <span class="y">require</span>('<span class="o">path</span>')
+console.log(<span class="lb">__dirname</span>)
+console.log(<span class="mb">path</span>.<span class="y">dirname</span><span class="m">(</span><span class="lr">__filename</span><span class="m">)</span>)
+</pre>
+                        </div>
+                    </div>                
+                </div>
+                <!-- 02. -->
+                <div tabindex="0" data-video="https://www.youtube.com/watch?v=JZXQ455OT3A" 
+                            data-timestamp="530"
+                             class="step-float">
+                    <div class="step-img">
+                        <img src="sidebar-links/06/images/02.png" alt="">
+                    </div>
+                    <div  class="step-txt ">
+                        <h4>02</h4>
+                        <p>
+                            We pass in arguments 
+                            from other modules like <code class="mb">os</code>.<code class="y">homedir()</code>(<code class="o">os</code> ) or global variables
+                            like <code class="lb">__filename</code> into <code class="o">path</code>'s methods via
+                            the <code class="m">()</code>'s.
+                        </p>
+                        <div class="code-container">
+                            <pre readonly tabindex="0" class="copy-code">
+const <span class="mb">os</span> = <span class="y">require</span>('<span class="os">os</span>')
+const <span class="mb">path</span> = <span class="y">require</span>('<span class="o">path</span>')
+const <span class="lr">home_dir</span> = <span class="mb">os</span>.<span class="y">homedir()</span>
+console.log( <span class="mb">path</span>.<span class="y">dirname</span><span class="m">(</span><span class="lr">home_dir</span><span class="m">)</span>
+console.log()
+
+console.log(<span class="mb">path</span>.<span class="y">dirname</span><span class="m">(</span><span class="lb">__filename</span><span class="m">)</span>)
+console.log(<span class="mb">path</span>.<span class="y">basename</span><span class="m">(</span><span class="lb">__filename</span><span class="m">)</span>)
+console.log(<span class="mb">path</span>.<span class="y">extname</span><span class="m">(</span><span class="lb">__filename</span><span class="m">)</span>)
+
+                            </pre>
+                        </div>
+                    </div>
+                    
+                </div>
+                <!-- 03. -->
+                <div tabindex="0" data-video="https://www.youtube.com/watch?v=JZXQ455OT3A" data-timestamp="400" class="step-float">
+                    <div class="step-img">
+                        <img src="sidebar-links/06/images/01.png" alt="">
+                    </div>
+                    <div class="step-txt ">
+                        <h4>01</h4>
+                        <p class="">
+                            The methods from the <i>Common Core Module</i> 
+                            <br><code class="o">path</code>, give us access to more detais.
+                        </p>
+                        <div class="code-container">
+                            <pre tabindex="0" class="copy-code">
+<span class="db">const</span> <span class="mb">os</span> = <span class="y">require</span>(<span class="o">'path'</span>)
+console.log(<span class="mb">path</span>)
+                </pre>
+                        </div>
+                    </div>
+                
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</body>
+</html>

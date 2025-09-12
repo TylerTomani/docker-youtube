@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+ <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>07-</title>
+</head>
+<body class="dark-mode">
+    <div id="targetDiv">
+        <div class="main-container">
+            <header>
+                <h3 id="targetHeaderh3">8. importing / create module</h3>
+            </header>
+            <div class="steps-container">
+                <!-- 01 -->
+                <div tabindex="0" data-video="https://www.youtube.com/watch?v=JZXQ455OT3A" 
+                data-timestamp="776" class="step-float">
+                    <div class="step-img">
+                        <img src="sidebar-links/08/images/01.png" alt="">
+                    </div>
+                    <div class="step-txt ">
+                        <h4>01</h4>
+                        <p class="">
+                            Create a new file in the same directory, with function to export as an object with 
+                            <code><span class="dc">module</span>.<span class="dc">exports</span></code>
+                            this example contains math functions in <code>math.js</code>
+                        </p>
+                        <div class="code-container">
+                            <pre tabindex="0" class="copy-code">
+const add = (a,b) => a + b
+const subtract = (a,b) =>  a - b
+const multiply = (a,b) =>  a * b
+const divide = (a,b) => a / b
+<span class="dc">module</span>.<span class="dc">exports</span> = {add,substact,multiply,divide}</pre>
+                        </div>
+                    </div>
+                
+                </div>
+                <!-- 02 -->
+                <div tabindex="0" data-video="https://www.youtube.com/watch?v=JZXQ455OT3A" 
+                data-timestamp="782" class="step-float">
+                    <div class="step-img">
+                        <img src="sidebar-links/08/images/02.png" alt="">
+                    </div>
+                    <div class="step-txt ">
+                        <h4>02</h4>
+                        <p class="">
+                            Import them into the server with <code>require('<span class="tom txt125 ls1px">./</span>')</code>
+                        </p>
+                        <p>
+                            you must use specific path when not using <b>Common Core Modules</b>. <span class="r"></span>
+                            <span class="tom">You do not need <code>.js</code></span>
+                        </p>
+                        <div class="code-container">
+                            <pre tabindex="0" class="copy-code">
+const math = require('./math')
+console.log(math.add(4,7))
+console.log(math.multiply(3,5))</pre>
+                        </div>
+                    </div>
+                
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

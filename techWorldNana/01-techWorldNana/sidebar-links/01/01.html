@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+ <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>01-intro</title>
+</head>
+<body class="dark-mode">
+    <div id="targetDiv">
+        <header>
+            <h3 id="targetHeaderh3">1. Docker Explain</h3>
+            <sub> maybe make this home page</sub>
+        </header>
+        <div class="main-container">
+            <div class="steps-container">
+                <!-- 1.-->
+                <div tabindex="0" class="step-float" data-video="https://www.youtube.com/watch?app=desktop&v=pg19Z8LL06w" 
+                    data-timestamp="1075">
+                    <div class="step-vid">
+                            <video playsinline webkit-playsinline poster="sidebar-links/01/images/01.png"
+                            src="sidebar-links/01/images/01.mov"></video>
+                    </div>
+                    <div class="step-txt ">
+                        <h4>01</h4>
+                        <p>
+                            Docker is updated all the time, check documentation for downloading and installing,
+                            You can search for 
+                        </p>
+                        <div class="code-container">
+                            <pre readonly tabindex="0" class="copy-code">
+Docker Desktop install
+                            </pre>
+                        </div>
+                        <p>
+                            or go to 
+                            <a tabindex="0" target="_blank" href="https://docs.docker.com/desktop/setup/install/mac-install/">docs.docker.com</a>
+                        </p>
+                        <p style="color:red;">
+                            **Alos, Instructions are found in the other tutorials on the previous page
+                        </p>
+                    </div>
+                </div>
+                <!-- 2. -->
+                <div  tabindex="0" class="step-float" data-video="https://www.youtube.com/watch?app=desktop&v=pg19Z8LL06w"
+                    data-timestamp="1075">
+                    <div class="step-img">
+                        <!-- <img src="sidebar-links/01/images/01.png" alt=""> -->
+                    </div>
+                    <div class="step-txt ">
+                        <h4>02</h4>
+                        <p>
+                            If you need to Delete Docker
+                            Instructions to delete docker are on the <a tabindex="0" target="_blank" href="../../../../docker-youtube.html">(back) - top left link (docker-youtube-homepage)</a>
+                            and here below
+                        </p>
+                        <h2>1. Uninstall Docker Desktop (GUI app)</h2>
+                        <h2 class="r">***<span class="tom">MAKE SURE</span> about right directory</h2>
+                        <p>
+                            If you downloaded Docker Desktop from docker.com:
+                        </p>
+                        <h2>Quit Docker Desktop:</h2>
+                        <p>Click the Docker whale icon in the menu bar → Quit Docker Desktop.
+                            Move the app to Trash:</p>
+                        <p>
+                            Go to Applications → drag Docker.app to the Trash.
+                        </p>
+
+                        <p>Remove support files:
+                        <br><strong> Open Terminal and run:</strong>
+                        </p>
+                        <div class="code-container">
+                        <pre readonly tabindex="0" class="copy-code">
+rm -rf ~/Library/Containers/com.docker.docker
+rm -rf ~/Library/Containers/com.docker.helper
+rm -rf ~/.docker
+rm -rf ~/Library/Group\ Containers/group.com.docker
+rm -rf ~/Library/Preferences/com.docker.docker.plist
+rm -rf ~/Library/Logs/Docker*
+rm -rf ~/Library/Caches/com.docker.docker
+                                    </pre>
+                        </div>
+                        <div class="code-container">
+                            <pre readonly tabindex="0" class="copy-code">
+rm -rf ~/Library/Containers/com.docker.vmnetd
+rm -rf /private/var/tmp/com.docker.vmnetd.socket</pre>
+                        </div>
+                        <h2>2. Uninstall Docker installed via Homebrew</h2>
+                        <p>
+                            If you used Homebrew (brew install --cask docker):
+                        </p>
+                        <div class="code-container">
+                            <pre readonly tabindex="0" class="copy-code">
+brew uninstall --cask docker</pre>
+                        </div>
+                        <h2>3. Remove images, volumes, and networks (if you want a total reset)</h2>
+                        <div class="code-container">
+                            <pre readonly tabindex="0" class="copy-code">
+docker system prune -a --volumes</pre>
+                        </div>
+                        <p>
+                            On macOS, ~/Library is a hidden folder, so you won’t see Library/Containers in Finder unless you reveal it. That’s why
+                            it looks like it’s missing.
+                        </p>
+                        <p>
+                            Here are two ways to deal with it:
+                        </p>
+                        <h3>🔹 Option 1: Open Library in Finder</h3>
+                        <p>
+                            In Finder, click Go in the menu bar.
+                            
+                            Hold down the Option (⌥) key → you’ll see Library appear.
+                            
+                            Click it → now you can navigate to Library/Containers.
+                        </p>
+                        <h3>🔹 Option 2: Use Terminal (easier)</h3>
+                        <p>
+                            You don’t need to manually browse — just run this one-liner in Terminal to wipe Docker Desktop and all its leftover
+                            files:
+                        </p>
+                        <div class="code-container">
+                            <pre readonly tabindex="0" class="copy-code">
+rm -rf /Applications/Docker.app \
+~/Library/Containers/com.docker.docker \
+~/Library/Containers/com.docker.helper \
+~/Library/Containers/com.docker.vmnetd \
+~/Library/Group\ Containers/group.com.docker \
+~/Library/Preferences/com.docker.docker.plist \
+~/Library/Logs/Docker* \
+~/Library/Caches/com.docker.docker \
+~/.docker \
+/private/var/tmp/com.docker.vmnetd.socket</pre>
+                        </div>
+                        <div class="code-container">
+                            <pre readonly tabindex="0" class="copy-code">
+brew uninstall docker
+brew uninstall docker-compose
+                            </pre>
+                        </div>
+                        <p>
+                            (should return “command not found” if fully removed)
+                        </p>
+                        <div class="code-container">
+                            <pre readonly tabindex="0" class="copy-code">
+which docker
+docker --version</pre>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- 3. toubleshoot  -->
+                <div tabindex="0" class="step-float" data-video="https://www.youtube.com/watch?v=b0HMimUb4f0" 
+                data-timestamp="1075">
+                    <div class="step-img">
+                        <!-- <img src="sidebar-links/01/images/02.png"> -->
+                    </div>
+                    <div class="step-txt">
+                        <h4>03 - troubleshooting</h4>
+                        <p> 
+                            If you are seeing "Operation not permitted"
+                        </p>
+                        <h3>1. Stop Docker before deleting</h3>
+                        <p>
+                            Make sure Docker Desktop is completely shut down:
+                        </p>
+                        <div class="code-container">
+                            <pre readonly tabindex="0" class="copy-code">
+osascript -e 'quit app "Docker"'</pre>
+                        </div>
+                        <h3>See if docker files remain with this</h3>
+                    <div class="code-container">
+                        <pre readonly tabindex="0" class="copy-code">
+sudo find / -name '*docker*' -print
+</pre>
+                    </div>
+                </div>
+                <!-- 4. toubleshoot - fix  -->
+                <div tabindex="0" class="step-float" data-video="https://www.youtube.com/watch?v=b0HMimUb4f0" 
+                data-timestamp="1075">
+                    <div class="step-img">
+                        <!-- <img src="sidebar-links/01/images/04.png"> -->
+                    </div>
+                    <div class="step-txt">
+                        <h4>4. toubleshoot - fix</h4>
+                        <p>
+                            BASH FIX, this will complelty erase docker or any other program that has files scattered
+                        </p>
+                        <h3>⚠️ Warning: This will delete any file/folder with “docker” in the name, including things in your home directory like
+                        projects, config files, etc. Make sure you backup anything important first.</h3>
+                        <h3>Here’s a single command approach:</h3>
+                        <div class="code-container">
+                            <pre readonly tabindex="0" class="copy-code">
+sudo find / -name '*docker*' -print 2>/dev/null | while read path; do
+    echo "Deleting: $path"
+    sudo rm -rf "$path" 2>/dev/null
+done
+</pre>
+                        </div>
+                        <p>
+Explanation:
+find / -name '*docker*' -print 2>/dev/null
+
+Searches the whole filesystem for anything containing “docker” and ignores permission errors.
+
+while read path; do ... done
+
+Iterates over each result.
+
+sudo rm -rf "$path" 2>/dev/null
+
+Deletes it silently if possible.
+
+echo "Deleting: $path"
+
+Prints what’s being deleted so you can monitor progress.
+
+                        </p>
+                        <h3>or, If you want it as a bash script you can save it as remove-docker.sh:</h3>
+                        <div class="code-container">
+                            <pre readonly tabindex="0" class="copy-code">
+#!/bin/bash
+echo "Starting Docker cleanup..."
+    sudo find / -name '*docker*' -print 2>/dev/null | while read path; do
+    echo "Deleting: $path"
+sudo rm -rf "$path" 2>/dev/null
+done
+echo "Done!"</pre>
+                        </div>
+                        <h3>Make it executable:</h3>
+                        <div class="code-container">
+                            <pre readonly tabindex="0" class="copy-code">
+chmod +x remove-docker.sh
+./remove-docker.sh
+</pre>
+                        </div>
+
+                        
+                    </div>
+                </div>
+                <!-- 4. toubleshoot - fix (SAFER)  -->
+                <div tabindex="0" class="step-float" data-video="https://www.youtube.com/watch?v=b0HMimUb4f0" 
+                data-timestamp="1075">
+                    <div class="step-img">
+                        <!-- <img src="sidebar-links/01/images/04.png"> -->
+                    </div>
+                    <div class="step-txt">
+                        <h4>4. toubleshoot - fix (SAFE)</h4>
+                        <p>
+                            safe, Docker-specific cleanup script for macOS that targets only Docker Desktop, CLI binaries, and related system
+                            files—not anything in your personal projects or unrelated files.
+                            
+                            Here’s a recommended script:, you;ll have to do one by on i think
+                        </p>
+                        
+                        <div class="code-container">
+                            <pre readonly tabindex="0" class="copy-code">
+#!/bin/bash
+echo "Starting safe Docker cleanup..."
+
+# Quit Docker Desktop if running
+osascript -e 'quit app "Docker"' 2>/dev/null
+
+# Remove Docker Desktop app
+echo "Removing Docker Desktop application..."
+sudo rm -rf /Applications/Docker.app
+
+# Remove Docker binaries from /usr/local/bin
+echo "Removing Docker CLI binaries..."
+sudo rm -f /usr/local/bin/docker
+sudo rm -f /usr/local/bin/docker-compose
+sudo rm -f /usr/local/bin/docker-machine
+
+# Remove Docker system files
+echo "Removing Docker system files..."
+sudo rm -rf ~/Library/Containers/com.docker.docker
+sudo rm -rf ~/Library/Application\ Support/Docker\ Desktop
+sudo rm -rf ~/Library/Group\ Containers/group.com.docker
+
+# Remove Docker configuration and state files
+sudo rm -rf ~/.docker
+
+# Optional: remove Docker virtual machines (if using Docker Machine)
+sudo rm -rf /usr/local/share/docker
+sudo rm -rf /usr/local/lib/docker
+sudo rm -rf /var/lib/docker 2>/dev/null
+
+echo "Docker cleanup complete!"</pre>
+                        </div>
+                        <h3>Usage: Save it as safe-docker-cleanup.sh.</h3>
+                        <h4>Make it executable:</h4>
+                        <div class="code-container">
+                            <pre readonly tabindex="0" class="copy-code">
+chmod +x safe-docker-cleanup.sh</pre>
+                        </div>
+                        <p>run it</p>
+                        <div class="code-container">
+./safe-docker-cleanup.sh</textarea>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </body> 
+    </html> 

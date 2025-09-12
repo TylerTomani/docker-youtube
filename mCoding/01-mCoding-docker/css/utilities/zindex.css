@@ -1,0 +1,44 @@
+/* z-index.css */
+.page-header {
+    z-index: 0
+}
+
+#targetDiv>.main-container>header {
+    z-index: 10;
+}
+.lesson-btns-container {
+    z-index: 10
+}
+/* lessons injectContent() */
+/* .imgs-container {
+    z-index: auto;
+}
+.step-img>img {
+    z-index: 1
+}
+img.enlarge {
+    z-index: 1;
+} */
+
+
+/* Images & videos baseline */
+.step-img img,
+.step-vid video {
+    position: relative;
+    z-index: 1;
+}
+
+/* Enlarged media always above everything */
+
+/* Copy-code blocks baseline */
+.copy-code {
+    position: relative;
+    z-index: 1;
+}
+
+/* Focused copy-code overrides enlarged media */
+.copy-code:focus,
+.copy-code.active {
+    position: relative;
+    /* z-index: 10000 !important; */
+}

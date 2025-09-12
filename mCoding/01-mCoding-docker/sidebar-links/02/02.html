@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+ <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>02-</title>
+</head>
+<body class="dark-mode">
+    <div id="targetDiv">
+        <header>
+            <h3 id="targetHeaderh3">2. Create project for <code>server</code></h3>
+        </header>
+        <div class="main-container">
+            <div class="steps-container">
+                <!-- 01 -->
+                <div tabindex="0" class="step-float" data-video="https://www.youtube.com/watch?v=b0HMimUb4f0" 
+                data-timestamp="384">
+                    <div class="step-vid">
+                        <!-- <video tabindex="-1" controls  -->
+                        <video playsinline webkit-playsinline poster="sidebar-links/02/images/01.png"
+                            src="sidebar-links/02/images/01.mov"></video>
+                    </div>
+                    <div class="step-txt">
+                        <h4>01</h4>
+                        <p>
+                            <span class="r">I can't find the Documentation explaing this but, </span>
+                            but i guess open docker, follow all the command first time opening,
+                            choose run dockers on open in settings
+                        </p>
+                        <p>
+                            run the command 
+                        </p>
+                        <div class="code-container">
+                            <pre readonly tabindex="0" class="copy-code">
+docker run hello-world</pre>
+                        </div>
+                        <span>** not clear in documentation</span>
+                        <p>
+                            maybe here 
+                            <a tabindex="0" target="_blank" href="https://docs.docker.com/get-started/docker-concepts/building-images/">docs.docker/get-started/doc ....</a>
+                            but it notice is now running on Docker Desktop Gui in Containers
+                        </p>
+                        <p>
+                            This pulls the latest <strong>image</strong> of hello-world,
+                        </p>
+                    </div>
+                </div>
+                <!-- 02 OG-->
+                <div data-video="https://www.youtube.com/watch?v=b0HMimUb4f0" 
+                            data-timestamp="390" tabindex="0" class="step-float">
+                    <div class="step-vid">
+                        <!-- <video tabindex="-1" controls  -->
+                        <video playsinline webkit-playsinline poster="sidebar-links/02/images/03.png"
+                            src="sidebar-links/02/images/03.mov"></video>
+                    </div>
+                    <div  class="step-txt clear">
+                        <h4>02</h4>
+                    <p>
+                        If we run <code>docker pull </code> we'll see the image under Images
+                    </p>
+                    <div class="code-container">
+                        <pre tabindex="0" class="copy-code">
+docker run hello-world</pre>
+                    </div>
+
+                        <p>
+                            running <code>docker run hello-world</code> will keep adding containers, delete images before
+                            trying to delete pulled images under container
+                        </p>  
+                    </div>
+                </div>  
+                <div tabindex="0" class="step-float" data-video="https://www.youtube.com/watch?v=b0HMimUb4f0" data-timestamp="360">
+                    <div class="step-vid">
+                        <!-- <video tabindex="-1" controls  -->
+                        <video playsinline webkit-playsinline poster="sidebar-links/01/images/01.png"
+                            src="sidebar-links/01/images/01.mov"></video>
+                    </div>
+                    <div class="step-txt ">
+                        <h4>01</h4>
+                        <p>
+                            Download and OPEN dmg file from this link
+                            <a target="_blank" tabindex="0" href="https://docs.docker.com/get-started/get-docker/#:~:text=You%20can%20download%20and%20install%20Docker%20on%20multiple%20platforms.%20Refer%20to%20the%20following%20section%20and%20choose%20the%20best%20installation%20path%20for%20you.
+                                            ">Docker Doc</a>,
+                            install , **read specifics on intel chip in your case
+                        </p>
+                        <p class="r"> **make sure you system is up to date, before downloading DMG seen in video to the right </p>
+                        <h5>on mac</h5>
+                        <div class="code-container">
+                            <pre readonly tabindex="0" class="copy-code">
+                brew update</pre>
+                        </div>
+                        <h5>linux</h5>
+                        <div class="code-container">
+                            <pre readonly tabindex="0" class="copy-code">
+                sudo apt update</pre>
+                        </div>
+                        <p>
+                            if you don't have homebrew
+                        </p>
+                        <div class="code-container">
+                            <pre readonly tabindex="0" class="copy-code">
+                /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+                                        </pre>
+                        </div>
+                    </div>
+                </div>
+                <!-- 03 -->
+                <div data-video="https://www.youtube.com/watch?v=b0HMimUb4f0" 
+                            data-timestamp="400" tabindex="0" class="step-float">
+                    <div class="step-vid">
+                        <!-- <video tabindex="-1" controls  -->
+                        <video playsinline webkit-playsinline poster="sidebar-links/02/images/03.png"
+                            src="sidebar-links/02/images/03.mov"></video>
+                    </div>
+                    <div  class="step-txt ">
+                        <h4>03</h4>
+                        <p>
+                            To download one and not run use <code>pull</code>
+                        </p>
+                        <div class="code-container">
+                            <pre tabindex="0" class="copy-code">
+docker pull hello-world</pre>
+                        </div>
+                        <span>**docker pull won't work again for same image</span>    
+                        <span>**I deleted everything after that, delete containers first</span>    
+                    </div>
+                </div>  
+                <div data-video="https://www.youtube.com/watch?v=b0HMimUb4f0" data-timestamp="390" tabindex="0" class="step-float">
+                    
+                    <div class="step-txt ">
+                        <h4>04</h4>
+                        <p>
+                            Keep in mind, DOCKER runs with ROOT privileges
+                        </p>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

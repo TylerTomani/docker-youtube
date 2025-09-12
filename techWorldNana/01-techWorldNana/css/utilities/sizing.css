@@ -1,0 +1,56 @@
+/* sizing.css */
+.page-header {
+    width: 100%;
+}
+.page-wrapper {height: 100vh;
+}
+.page-wrapper .page-header {width: 100%;    }
+.page-wrapper .page-header .header-col-left>.header-nav a {
+    width: 100%;
+}
+.page-header .header-logo-actions-right a {
+    height: 90%;
+    width: 100%;
+}
+.page-header .header-logo-actions-right,
+.page-header .header-logo-actions-right a img{
+    max-height: 150px;
+    
+}
+/* Main content scrollable */
+#targetDiv {
+    height: 100vh;
+}
+#mainTargetDiv > .main-container {
+    width: 100%;
+    
+}
+.lesson-btns-container {width: 50%;}
+.lesson-btns-container>button {
+    background: rgb(0, 0, 0, 0);
+    font-family:  'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    width: 100%;
+    height: 40px;
+}
+/* Lessons injectContent() */
+
+.step,
+.step-float {
+    min-height: 40vh;
+}
+.step-float>.step-txt>.code-container {
+    /* max-width: 80%; */
+}
+
+.code-container textarea.copy-code{
+    min-width: 80vw;
+    /* min-height: 20vh; */
+    min-height: fit-content;
+}
+.code-container > pre.copy-code {
+    width: fit-content;
+}
+.code-container pre {
+    /* width: fit-content; */
+    min-width: 30vw;
+}
