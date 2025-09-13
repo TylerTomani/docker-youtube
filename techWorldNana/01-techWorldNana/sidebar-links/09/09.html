@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+ <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>09-dockerLogs</title>
+</head>
+<body class="dark-mode">
+    <div id="targetDiv">
+        <div class="main-container">
+            <header>
+                <h3 id="targetHeaderh3" >9. <code>docker logs</code></h3>
+            </header>
+            <div class="steps-container">
+                <!-- 01 -->
+                <div tabindex="0" class="step-float" data-video="https://www.youtube.com/watch?app=desktop&v=pg19Z8LL06w"
+                    data-timestamp="2209">
+                    <div class="step-img">
+                        <img src="sidebar-links/09/images/01.png" alt="">
+                    </div>
+                    <div class="step-txt">
+                        <h4>01</h4>
+                        <p>
+                            When the docker is running you can get log output with 
+                        </p>
+                        <p class="r">make sure you have images running in container then run </p>
+                        <div class="code-container">
+                            <pre readonly tabindex="0" class="copy-code">
+docker logs </pre>
+                        </div>
+                        <p>
+                            to see logs
+                        </p>
+                        <p class="r">
+                            after running
+                        </p>
+                        <div class="code-container">
+                            <pre readonly tabindex="0" class="copy-code">
+docker run -d nginx</pre>
+                        </div>
+                        <p>
+                            put whatever version after <code>nginx:</code> from here
+                            <a tabindex="0" target="_blank"
+                                href="https://hub.docker.com/_/nginx#:~:text=Supported-,tags,-and%20respective%20Dockerfile">https://hub.docker.com/_/nginx</a>
+                        </p>
+                        <div class="code-container">
+                            <pre readonly tabindex="0" class="copy-code">
+docker ps</pre>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- 02 --> 
+                <div tabindex="0" class="step-float" data-video="https://www.youtube.com/watch?app=desktop&v=pg19Z8LL06w"
+                    data-timestamp="2239">
+                    <div class="step-txt">
+                        <h4>02</h4>
+                        <p>
+                            If you don't have the image and you do the run command, it will download the images and run in the background
+                            when used with <code>-d</code> detach flag
+                        </p>
+                        <div class="code-container">
+                            <pre readonly tabindex="0" class="copy-code">
+docker run -d nginx </pre>
+                        </div>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+    </div>
+</body>
+</html>
