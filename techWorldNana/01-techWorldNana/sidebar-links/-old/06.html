@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+ <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>06-pull ngix:&lt;tagname> form Docker Registries</title>
+</head>
+<body class="dark-mode">
+    <div id="targetDiv">
+        <div class="main-container">
+            <header>
+                <h3 id="targetHeaderh3" >6. pull ngix:<span class="b">&lt;tagname></span> form Docker Registries</h3>
+            </header>
+            <div class="steps-container">
+                <!-- 01 -->
+                <div tabindex="0" class="step-float" data-video="https://www.youtube.com/watch?app=desktop&v=pg19Z8LL06w" 
+                data-timestamp="1948">
+                    <div class="step-vid">
+                        <video playsinline webkit-playsinline poster="sidebar-links/06/images/01.png"
+                            src="sidebar-links/06/images/01.mov"></video>
+                    </div>
+                    <div class="step-txt ">
+                        <h4>01</h4>
+                        <p>
+                            Go to docker hub <a tabindex="0" target="_blank" href="https://hub.docker.com/_/nginx">https://hub.docker.com/_/nginx</a>
+                            and use previous version, 
+                            <span class="r">***(version/ tagname in tutorial is out of data)</span>
+                        </p>
+                        <p class="r">
+                            I couldn't use the version from tutorial 
+                        </p>
+                        <p> i used</p>
+                        <div class="code-container">
+                            <pre readonly tabindex="0" class="copy-code">
+docker pull nginx:stable-perl</pre>
+                        </div>
+                        <p>
+                            to fix the below trying to run the previous <code>1.28</code> version
+                        </p>
+                        <div class="code-container">
+                            <pre readonly tabindex="0" class="copy-code">
+tt@MacBookPro ~ % docker pull ngnix:1.28
+Error response from daemon: pull access denied for ngnix, repository does not exist or may require 'docker login'
+tt@MacBookPro ~ %
+</pre>
+                        </div>
+                    </div>
+                </div>
+                <!-- 02   -->
+                <div tabindex="0" class="step-float" data-video="https://www.youtube.com/watch?app=desktop&v=pg19Z8LL06w" 
+                data-timestamp="1948">
+                    <div class="step-vid">
+                        <video playsinline webkit-playsinline poster="sidebar-links/06/images/02.png"
+                            src="sidebar-links/06/images/02.mov"></video>
+                    </div>
+                    <div  class="step-txt ">
+                        <h4>02- fix</h4>
+                        <p>
+                            Use the commmand 
+                        </p>
+                        <div class="code-container">
+                            <pre readonly tabindex="0" class="copy-code">
+docker pull nginx:stable-perl</pre>
+                        </div>
+                        <p>
+                           from the docker hub <a tabindex="0" target="_blank" href="https://hub.docker.com/_/nginx">https://hub.docker.com/_/nginx</a>
+                        </p>
+                        
+                        
+                    </div>
+                </div>
+                
+                <!-- 03 -->
+                <div tabindex="0" class="step-float" data-video="https://www.youtube.com/watch?app=desktop&v=pg19Z8LL06w"
+                    data-timestamp="2000">
+                    <div class="step-img">
+                        <img src="sidebar-links/06/images/03.png" alt="">
+                    </div>
+                    <div class="step-txt">
+                        <h4>03</h4>
+                        <p>
+                            Run 
+                        </p>
+                        <div class="code-container">
+                            <pre readonly tabindex="0" class="copy-code">
+docker images</pre>
+                        </div>
+                        <p>
+                            and check docker desktop to see image
+                        </p>
+                    </div>
+                </div>
+                <!-- 04 -->
+                
+            </div>
+        </div>
+    </div>
+</body>
+</html>
