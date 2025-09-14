@@ -16,79 +16,56 @@
                 <!-- 01 -->
                 
                 <div tabindex="0" class="step-float" data-video="https://www.youtube.com/watch?app=desktop&v=pg19Z8LL06w"
-                    data-timestamp="2500">
-                    <div class="step-vid">
-                        <video playsinline webkit-playsinline poster="sidebar-links/10/images/01.png"
-                            src="sidebar-links/10/images/01.mov"></video>
+                    data-timestamp="270018">
+                    <div class="step-img">
+                        <img src="sidebar-links/11/images/01.png" alt="">
                     </div>
                     <div class="step-txt">
                         <h4>01 </h4>
                         <p>
-                            first check and stop any containers running
+                            Docker doesn't re-use the container, it creates a new one,
                         </p>
+                        <sup>** pic from 44:00 mins</sup>
                         <p>
-                            start a new container and includ <code class="m">-p</code> 'port' flag, 
-                            docker runs on 80 but assign it to any local host port.
-                        </p>
-                        <div class="code-container">
-                            <pre readonly tabindex="0" class="copy-code">
-docker run -d -p 9000:<span class="m">80</span> nginx:1.23-alpine</pre>
-                        </div>
-                        <p>1.23-alpine somewhere here
-                            <a tabindex="0" target="_blank"
-                                href="https://hub.docker.com/_/nginx#:~:text=Supported-,tags,-and%20respective%20Dockerfile">https://hub.docker.com/_/nginx</a>
-                        </p>
-                        <p>
-                            open local host 900 on a browser
-                        </p>
-                        <div class="code-container">
-                            <pre readonly tabindex="0" class="copy-code">
-http://localhost:9000/</pre>
-                        </div>
-                        <p>
-                            <span class="r">Standard Practice</span>
-                            use same host on your local as the app like docker
-                        </p>
-                    </div>
-                </div>
-                <!-- 02 -->
-                <div tabindex="0" class="step-float" data-video="https://www.youtube.com/watch?app=desktop&v=pg19Z8LL06w"
-                    data-timestamp="2549">
-                    <div class="step-img">
-                        <img src="sidebar-links/10/images/02.png" alt="">
-                    </div>
-                    <div class="step-txt">
-                        <h4>02 </h4>
-                        <p>
-                            You can see what port the container is running on in 
+                            when you run 
                         </p>
                         <div class="code-container">
                             <pre readonly tabindex="0" class="copy-code">
 docker ps</pre>
                         </div>
-                        <sup>**pic from 42:29 video, click this step then tutorila img top right</sup>
-                    </div>
-                </div>
-                <div tabindex="0" class="step-float" data-video="https://www.youtube.com/watch?app=desktop&v=pg19Z8LL06w"
-                    data-timestamp="2560">
-                    <div class="step-img">
-                        <img src="sidebar-links/10/images/03.png" alt="">
-                    </div>
-                    <div class="step-txt">
-                        <h4>03 </h4>
                         <p>
-                            same with running logs
-                        </p>
-                        <p>
-                            You can see the GET request from our mac
+                            it only shows the current running container and not the other ones created,
+                            <br>use the <code class="m">-a</code> 'all' flag to see them
                         </p>
                         <div class="code-container">
                             <pre readonly tabindex="0" class="copy-code">
-docker logs</pre>
+docker ps -a</pre>
                         </div>
-                        <sup>**pic from 43:00 video, click this step then tutorila img top right</sup>
                     </div>
                 </div>
+                <!-- 02 -->
+                <div tabindex="0" class="step-float" data-video="https: //www.youtube.com/watch?app=desktop&v=pg19Z8LL06w"
+                    data-timestamp="1240">
+                    <div class="step-img">
+                        <img src="sidebarlinks/11/images/02.png" alt="">
+                    </div>
+                    <div class="step-txt">
+                        <h4>02</h4>
+                        <p>
+                            use the <code class="m">start</code>
+                            command to re-use a container, followed by the id
+                            <code>docker start &lt;id> or &lt;container name></code>
+                        </p>
+                        <div class="code-container">
+                            <pre readonly tabindex="0" class="copy-code">
+docker start</pre>
+                        </div>
+                        <p>
+                            You can start multiple containers at once
+                        </p>
+                    </div>
+                </div>  
+                
 
                 
             </div>
