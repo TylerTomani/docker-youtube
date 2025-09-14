@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+ <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>13-private registries</title>
+</head>
+<body class="dark-mode">
+    <div id="targetDiv">
+        <div class="main-container">
+            <header>
+                <h3 id="targetHeaderh3" >13. <code>docker --name</code> give name to container</h3>
+            </header>
+            <div class="steps-container">
+                <!-- 01 -->                
+                <div tabindex="0" class="step-float" data-video="https://www.youtube.com/watch?app=desktop&v=pg19Z8LL06w"
+                    data-timestamp="2760">
+                    <div class="step-vid">
+                        <video playsinline webkit-playsinline poster="sidebar-links/13/images/01.mov"
+                            src="sidebar-links/08/images/04.mov"></video>
+                    </div>
+                    <div class="step-txt">
+                        <h4>01 </h4>
+                        <p>
+                            To create private registries you need to sign up and in
+                        </p>
+                        <div class="code-container">
+                            <pre readonly tabindex="0" class="copy-code">
+docker run <span class="m">--name</span></pre>
+                        </div>
+                        <div class="code-container">
+                            <pre readonly tabindex="0" class="copy-code">
+docker run --name web-app -d -p 8000:80 nginx</pre>
+                        </div>
+                    </div>
+                </div>
+                <!-- 02 -->
+                <div tabindex="0" class="step-float" data-video="https://www.youtube.com/watch?app=desktop&v=pg19Z8LL06w"
+                    data-timestamp="2900">
+                    <div class="step-img">
+                        <img src="sidebarlinks/11/images/02.png" alt="">
+                    </div>
+                    <div class="step-txt">
+                        <h4>02</h4>
+                        <p>
+                           now we can use the new name to use the container
+                        </p>
+                        <div class="code-container">
+                            <pre readonly tabindex="0" class="copy-code">
+docker ps web-app</pre>
+                        </div>
+                    </div>
+                </div>  
+                
+
+                
+            </div>
+        </div>
+    </div>
+</body>
+</html>

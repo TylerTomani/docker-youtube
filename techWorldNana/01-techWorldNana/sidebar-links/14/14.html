@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+ <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>14-create image</title>
+</head>
+<body class="dark-mode">
+    <div id="targetDiv">
+        <div class="main-container">
+            <header>
+                <h3 id="targetHeaderh3" >14. create image</h3>
+            </header>
+            <div class="steps-container">
+                <!-- 01 -->                
+                <div tabindex="0" class="step-float" data-video="https://www.youtube.com/watch?app=desktop&v=pg19Z8LL06w"
+                    data-timestamp="3600">
+                    <div class="step-img">
+                        <img src="sidebarlinks/14/images/02.png" alt="">
+                    </div>
+                    <div class="step-txt">
+                        <h4>02</h4>
+                        <p>
+                            This is the example node.js project they use, but YOU HAVE TO install express before trying
+                        </p>
+                        <div class="code-container">
+                            <pre readonly tabindex="0" class="copy-code">
+npm install express</pre>
+                        </div>
+                        <p class="r">Use </p>
+                        <div class="code-container">
+                            <pre readonly tabindex="0" class="copy-code">
+npm audit fix</pre>
+                        </div>
+                        <p> if you have a problem with vulnerbilities</p>
+                        <div class="code-container">
+                            <pre readonly tabindex="0" class="copy-code">
+node src/server.js</pre>
+                        </div>
+                    </div>
+                </div>
+                <!-- 02 -->
+                <div tabindex="0" class="step-float" data-video="https://www.youtube.com/watch?app=desktop&v=pg19Z8LL06w"
+                    data-timestamp="3112">
+                    <div class="step-vid">
+                        <video playsinline webkit-playsinline poster="sidebar-links/14/images/03.png"
+                            src="sidebar-links/14/images/02.mov"></video>
+                    </div>
+                    <div class="step-txt">
+                        <h4>02</h4>
+                        <p>
+                            Create an images by creating a file in your directory called 
+                            <code>Dockerfile</code>
+                        </p>
+                        <p>
+                            this is a lightweight linux operating system that has node, npm, installed on your app
+                        </p>
+                        <p>
+                            define the image with <code class="m">FROM</code>
+                        </p>
+                        <p>
+                            Get the base image from docker hub, 
+                            <a tabindex="0" target="_blank" href="https://hub.docker.com/_/node">https://hub.docker.com/_/node</a>
+                        </p>
+                        <div class="code-container">
+                            <pre readonly tabindex="0" class="copy-code">
+<span class="m">FROM node:19-alpine</span></pre>
+                        </div>
+                        <p class="r">** 19-alpine is old but i'm gonna use it</p>
+                    </div>
+                </div>
+                <!-- 03 -->
+                 <div tabindex="0" class="step-float" data-video="https://www.youtube.com/watch?app=desktop&v=pg19Z8LL06w"
+                    data-timestamp="3180">
+                    <div class="step-img">
+                        <img src="sidebarlinks/14/images/03.png" alt="">
+                    </div>
+                    <div class="step-txt">
+                        <h4>03</h4>
+                        <p> 
+                            Use the <code class="m">RUN</code> command to install <code>express</code>
+                            since we are using it,
+                        </p>
+                        <p>
+                            This is what allows us to install any dependendicies and anything after <code class="mr">RUN</code>
+                            will run in the command line
+                        </p>
+                        <div class="code-container">
+                            <pre readonly tabindex="0" class="copy-code">
+FROM node:19-alpine                                
+RUN npm install express</pre>
+                        </div>
+                    </div>
+                 </div>
+                
+                
+                
+
+                
+            </div>
+        </div>
+    </div>
+</body>
+</html>
