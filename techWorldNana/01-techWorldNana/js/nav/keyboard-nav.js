@@ -1,6 +1,6 @@
 // keyboard-nav.js
 import { injectContent } from "../core/inject-content.js";
-import { handleStepKeys, lastStep } from "./step-txt.js";
+import { copyCodesStepFocused, handleStepKeys, lastStep } from "./step-txt.js";
 import { denlargeAllImages } from "./step-txt.js";
 import { denlargeAllVideos, pauseDenlargeAllVideos } from "./playStepVid.js";
 
@@ -10,7 +10,36 @@ export const endNxtLessonBtn = document.querySelector('#endNxtLessonBtn');
 const prevLessonBtn = document.querySelector('#prevLessonBtn');
 export const tutorialLink = document.querySelector('#tutorialLink');
 export const sidebarLinks = Array.from(document.querySelectorAll('.sidebar-links-ul a'));
+export const sidebarLinksUlLiAs = Array.from(document.querySelectorAll('.sidebar-links-ul li ul li a'));
 import { dropDowns } from "../ui/drop-down.js";
+let dropDownFocused = true
+let iDropDowns = 0
+dropDowns.forEach(el => {
+    el.addEventListener('focus', e => {
+        dropDownFocused = true
+        iDropDowns = [...dropDowns].indexOf(e.target)
+        // console.log(iDropDowns)
+    })
+    el.addEventListener('focus', e => {
+        dropDownFocused = true
+        iDropDowns = [...dropDowns].indexOf(e.target)
+        // console.log(iDropDowns)
+    })
+})
+sidebarLinksUlLiAs.forEach(el => {
+    el.addEventListener('focus', e => {
+        dropDownFocused = false
+    })
+    el.addEventListener('keydown', e => {
+        let key = e.key.toLowerCase()
+        if(!dropDownFocused && key == 's'){
+            e.preventDefault()
+            const dropDown = e.target.closest('a')
+            dropDown.focus()
+            console.log(dropDown)
+        }
+    })
+})
 export function initKeyboardNav({
     pageHeader, pageHeaderLinks, navLessonTitle, darkModeBtn,
     sidebar, sidebarBtn, mainTargetDiv, mainContainer
@@ -88,7 +117,7 @@ export function initKeyboardNav({
                     mainTargetDiv.focus();
                 }
                 lastClickedLink = e.target;
-            } else if (key === 's') {
+            } else if (key === 's' && copyCodesStepFocused) {
                 sidebarBtn.focus();
             } else
             if (key === 'm') {
@@ -180,18 +209,22 @@ export function initKeyboardNav({
         }
     }
 
+    // function numberShortcut(key) {
+    //     const index = parseInt(key) - 1;
+
+    //     if (index >= 0 && index < sidebarLinks.length) {
+    //         iSideBarLinks = index;
+    //         sidebarLinks[iSideBarLinks].focus();
+    //     }
+    //      else {
+    //         const steps = mainTargetDiv.querySelectorAll(".step-float, .step");
+    //         // if (index >= 0 && index < steps.length) steps[index].focus();
+    //     }
+    // }
     function numberShortcut(key) {
         const index = parseInt(key) - 1;
 
-        if (index >= 0 && index < sidebarLinks.length) {
-            iSideBarLinks = index;
-            sidebarLinks[iSideBarLinks].focus();
-        }
-        // if()
-         else {
-            const steps = mainTargetDiv.querySelectorAll(".step-float, .step");
-            if (index >= 0 && index < steps.length) steps[index].focus();
-        }
+        console.log(dropDownFocused)
     }
 
     // --- Global key handling ---
@@ -227,24 +260,46 @@ export function initKeyboardNav({
                 headerElementsFocus(key,e)
                 
                 if (key === 'f') {
+                    if(dropDownFocused){
+                        console.log(dropDowns[iDropDowns])
+                        iDropDowns = (iDropDowns + 1) % dropDowns.length
+                        
+                        dropDowns[iDropDowns].focus()
+                        return
+                    } else {
+
+                    
                     suppressIndexUpdate = true;
                     if (e.target == sidebarBtn) {
                         iSideBarLinks = 0;
                         sidebarLinks[0].focus();
                     } else {
+                        
+                        
                         iSideBarLinks = (iSideBarLinks === -1) ? 0 : (iSideBarLinks + 1) % sidebarLinks.length;
                         sidebarLinks[iSideBarLinks].focus();
+                        
+
                     }
                     suppressIndexUpdate = false;
+                    }
                 } else if (key === 'a') {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    suppressIndexUpdate = true;
-                    iSideBarLinks = (iSideBarLinks === -1)
-                        ? sidebarLinks.length - 1
-                        : (iSideBarLinks - 1 + sidebarLinks.length) % sidebarLinks.length;
-                    sidebarLinks[iSideBarLinks].focus();
-                    suppressIndexUpdate = false;
+                    if(dropDownFocused){
+                        e.preventDefault()
+                        e.stopPropagation()
+                        iDropDowns = (iDropDowns - 1 + dropDowns.length) % dropDowns.length
+                        dropDowns[iDropDowns].focus()
+                        return
+                    } else {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        suppressIndexUpdate = true;
+                        iSideBarLinks = (iSideBarLinks === -1)
+                            ? sidebarLinks.length - 1
+                            : (iSideBarLinks - 1 + sidebarLinks.length) % sidebarLinks.length;
+                        sidebarLinks[iSideBarLinks].focus();
+                        suppressIndexUpdate = false;
+                    }
                 } else if (key === 'm') {
                     mKeyFocusOrder(e);
                 } else if (key === 's') {
