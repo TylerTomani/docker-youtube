@@ -1,5 +1,6 @@
 // index.js
 import { initKeyboardNav } from "../nav/keyboard-nav.js";
+
 import { getPageHeader, getPageHeaderLinks, getNavLessonTitle, getDarkModeBtn, getSideBar, getSideBarBtn, initSideBarLinks, getMainTargetDiv, getMainContainer } from "../utils/dom-utils.js";
 import { toggleSidebar } from "../ui/toggle-sidebar.js";
 import { dragHideSidebar } from "../ui/drag-hide-sidebar.js";
@@ -30,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
         darkModeBtn: getDarkModeBtn(),
         navLessonTitle: navLessonTitle,
         sidebar: getSideBar(),
-        sidebarBtn: sideBarBtn,
+        sidebarBtn: sidebarBtn,
         sidebarLinks: Array.from(initSideBarLinks()), // <-- convert NodeList to array
         mainTargetDiv: getMainTargetDiv(),
         mainContainer: mainContainer

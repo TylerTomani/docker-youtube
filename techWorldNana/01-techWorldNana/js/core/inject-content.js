@@ -1,5 +1,6 @@
 // inject-content.js
 import { initStepNavigation } from "../nav/step-txt.js";
+import { initDropDowns } from "../ui/drop-down.js";
 import { addCopyCode } from "../ui/copy-code.js";
 
 export function injectContent(href, mainTargetDiv, sidebarLinks, iSideBarLinks, navLessonTitle, callback) {
@@ -11,7 +12,7 @@ export function injectContent(href, mainTargetDiv, sidebarLinks, iSideBarLinks, 
         .then(html => {
             // Insert HTML into the main container
             mainTargetDiv.innerHTML = html;
-
+            initDropDowns()
             // Update nav lesson title if available
             const parser = new DOMParser();
             const doc = parser.parseFromString(html, 'text/html');
