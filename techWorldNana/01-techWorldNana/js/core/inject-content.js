@@ -18,11 +18,9 @@ export function injectContent(href, mainTargetDiv, sidebarLinks, iSideBarLinks, 
             const doc = parser.parseFromString(html, 'text/html');
             const headerH3 = doc.querySelector('#targetHeaderh3');
             if (headerH3 && navLessonTitle) navLessonTitle.textContent = headerH3.textContent;
-
             // Initialize step navigation & copy-code buttons
             initStepNavigation(mainTargetDiv, sidebarLinks, iSideBarLinks);
             addCopyCode();
-            
             // Optional callback after injection
             if (typeof callback === "function") callback();
         })

@@ -1,11 +1,13 @@
 // drop-downs.js
+export const dropDowns = document.querySelectorAll('.drop-down')
 export function initDropDowns() {
     if (!document.listenersAdded) {
+        hideUlLiUls()
         document.addEventListener("click", handleToggle);
         document.addEventListener("keydown", handleToggle);
         document.listenersAdded = true
     }
-    hideUlLiUls()
+    
     // const dropChilds = document.querySelectorAll('.code-cmd') ? document.querySelectorAll('.code-cmd') : document.querySelectorAll('.topic-snips')
     function handleToggle(e) {
         let target;
@@ -17,6 +19,7 @@ export function initDropDowns() {
                 return; // ignore other keys
             }
         } else if (e.type === "click") {
+            e.preventDefault()
             // Ignore clicks triggered by keyboard
             if (e.detail === 0) return;
             target = e.target.closest(".drop-down");
@@ -25,7 +28,7 @@ export function initDropDowns() {
         // Unified toggle logic
         const li = target.closest("li");
         if (li) {
-            toggleTopicSnips(li)
+            toggleSidebarLinksLiUl(li)
             return
         }
     }
@@ -34,22 +37,15 @@ export function initDropDowns() {
 function hideUlLiUls() {
     const sideBarLinkSubLinks = document.querySelectorAll('.sidebar-links-ul > li > ul')
     sideBarLinkSubLinks.forEach(el => {
-        el.classList.toggle('hide')
-    })
-}
-function hideAllCodeCmds() {
-    const codeCmds = document.querySelectorAll('.code-cmd')
-    codeCmds.forEach(el => {
-        if (!el.classList.contains('show')) {
+        if(!el.classList.contains('show')){
             el.classList.add('hide')
         }
     })
-
-
 }
-function toggleTopicSnips(li) {
+
+function toggleSidebarLinksLiUl(li) {
     const ul = li.querySelector('ul')
-    // console.log(topic)
     ul.classList.toggle("hide"); // example toggle
+    console.log(ul)
 }
 

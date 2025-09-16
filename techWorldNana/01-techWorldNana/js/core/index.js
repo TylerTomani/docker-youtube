@@ -1,5 +1,5 @@
 // index.js
-import { initKeyboardNav } from "../nav/keyboard-nav.js";
+import { initKeyboardNav,sidebarLinks } from "../nav/keyboard-nav.js";
 
 import { getPageHeader, getPageHeaderLinks, getNavLessonTitle, getDarkModeBtn, getSideBar, getSideBarBtn, initSideBarLinks, getMainTargetDiv, getMainContainer } from "../utils/dom-utils.js";
 import { toggleSidebar } from "../ui/toggle-sidebar.js";
@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const darkModeBtn = getDarkModeBtn();
     const sidebar = getSideBar();
     const sidebarBtn = getSideBarBtn();
-    const sidebarLinks = Array.from(initSideBarLinks());
+    
     const mainTargetDiv = getMainTargetDiv();
     const mainContainer = getMainContainer();
     
@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
         navLessonTitle: navLessonTitle,
         sidebar: getSideBar(),
         sidebarBtn: sidebarBtn,
-        sidebarLinks: Array.from(initSideBarLinks()), // <-- convert NodeList to array
+        // sidebarLinks: Array.from(initSideBarLinks()), // <-- convert NodeList to array
         mainTargetDiv: getMainTargetDiv(),
         mainContainer: mainContainer
     });

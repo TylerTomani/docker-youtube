@@ -9,10 +9,11 @@ export let lastClickedLink = null;
 export const endNxtLessonBtn = document.querySelector('#endNxtLessonBtn');
 const prevLessonBtn = document.querySelector('#prevLessonBtn');
 export const tutorialLink = document.querySelector('#tutorialLink');
-
+export const sidebarLinks = Array.from(document.querySelectorAll('.sidebar-links-ul a'));
+import { dropDowns } from "../ui/drop-down.js";
 export function initKeyboardNav({
     pageHeader, pageHeaderLinks, navLessonTitle, darkModeBtn,
-    sidebar, sidebarBtn, sidebarLinks, mainTargetDiv, mainContainer
+    sidebar, sidebarBtn, mainTargetDiv, mainContainer
 }) {
     let focusZone = "header"; // "header" | "sidebar" | "main"
     let iSideBarLinks = 0;
@@ -83,7 +84,7 @@ export function initKeyboardNav({
                 focusZone = 'sidebar';
                 const targetLink = e.target.closest("a");
                 if (targetLink) injectContent(targetLink.href, mainTargetDiv);
-                if (e.target === lastClickedLink) {
+                if (e.target === lastClickedLink && !e.target.classList.contains('drop-down')) {
                     mainTargetDiv.focus();
                 }
                 lastClickedLink = e.target;
@@ -181,10 +182,13 @@ export function initKeyboardNav({
 
     function numberShortcut(key) {
         const index = parseInt(key) - 1;
+
         if (index >= 0 && index < sidebarLinks.length) {
             iSideBarLinks = index;
             sidebarLinks[iSideBarLinks].focus();
-        } else {
+        }
+        // if()
+         else {
             const steps = mainTargetDiv.querySelectorAll(".step-float, .step");
             if (index >= 0 && index < steps.length) steps[index].focus();
         }
@@ -195,8 +199,7 @@ export function initKeyboardNav({
         const key = e.key.toLowerCase();
         if (e.shiftKey || e.metaKey) return;
         switch (focusZone) {
-            case "header":
-                
+            case "header":    
                 headerElementsFocus(key, e);
                 if (key === 'f') {
                     focusZone = "sidebar";
