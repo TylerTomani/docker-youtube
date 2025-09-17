@@ -46,6 +46,5 @@ function hideUlLiUls() {
 function toggleSidebarLinksLiUl(li) {
     const ul = li.querySelector('ul')
     ul.classList.toggle("hide"); // example toggle
-    console.log(ul)
 }
 

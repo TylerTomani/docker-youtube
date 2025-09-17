@@ -223,7 +223,9 @@ export function initKeyboardNav({
     // }
     function numberShortcut(key) {
         const index = parseInt(key) - 1;
-
+        if(dropDownFocused){
+            dropDowns[index].focus()
+        }
         console.log(dropDownFocused)
     }
 
@@ -261,7 +263,19 @@ export function initKeyboardNav({
                 
                 if (key === 'f') {
                     if(dropDownFocused){
-                        console.log(dropDowns[iDropDowns])
+                        if(document.activeElement.classList.contains('drop-down')){
+                            const sidebarLinkLi = document.activeElement.parentElement 
+                            const childUl = sidebar.querySelector('ul li ul')
+                            if(!childUl.classList.contains('hide')){
+                                const firstLiInUl = childUl.querySelector('li a')
+                                dropDownFocused = false
+                                firstLiInUl.focus()
+                                return
+
+                            }
+                            
+                        }
+                        // console.log(dropDowns[iDropDowns])
                         iDropDowns = (iDropDowns + 1) % dropDowns.length
                         
                         dropDowns[iDropDowns].focus()
