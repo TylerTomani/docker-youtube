@@ -21,10 +21,16 @@ dropDowns.forEach(el => {
         iDropDowns = [...dropDowns].indexOf(e.target)
         // console.log(iDropDowns)
     })
+    el.addEventListener('focus', e => {
+        dropDownFocused = true
+        iDropDowns = [...dropDowns].indexOf(e.target)
+        // console.log(iDropDowns)
+    })
 })
 sidebarLinksUlLiAs.forEach(el => {
     el.addEventListener('focus', e => {
         dropDownFocused = false
+
     })
     el.addEventListener('keydown', e => {
         let key = e.key.toLowerCase()
@@ -32,8 +38,7 @@ sidebarLinksUlLiAs.forEach(el => {
             e.preventDefault()
             const dropDown = e.target.closest('a')
             dropDown.focus()
-        } else {
-            // sidebarBtn.focus()j
+            console.log(dropDown)
         }
     })
 })
@@ -223,7 +228,7 @@ export function initKeyboardNav({
         if(dropDownFocused){
             dropDowns[index].focus()
         }
-        // console.log(dropDownFocused)
+        console.log(dropDownFocused)
     }
 
     // --- Global key handling ---
