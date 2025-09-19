@@ -44,7 +44,6 @@ export function initKeyboardNav({
     let focusZone = "header"; // "header" | "sidebar" | "main"
     
     let suppressIndexUpdate = false; // prevent focus handler from resetting index after keyboard nav
-
     // --- Focus zone tracking ---
     pageHeader.addEventListener("focusin", () => { 
         const allVids = document.querySelectorAll('video')
@@ -59,7 +58,6 @@ export function initKeyboardNav({
      });
     sidebarBtn.addEventListener("focusin", () => { focusZone = "sidebar"; });
     mainTargetDiv.addEventListener("focusin", () => { focusZone = "main"; });
-
     // --- Sidebar button behavior ---
     sidebarBtn.addEventListener("keydown", e => {
         const key = e.key.toLowerCase();
@@ -72,8 +70,12 @@ export function initKeyboardNav({
             focusZone = 'main'
             mainTargetDiv.focus()
         }
+        if(key === 'f'){
+            e.preventDefault()
+            iSideBarLinks = 0
+            sidebarLinks[0].focus()
+        }
     });
-
     // --- Sidebar links ---
     sidebarLinks.forEach(el => {
         if (el.hasAttribute("autofocus")) {
@@ -83,9 +85,9 @@ export function initKeyboardNav({
             injectContent(el.href, mainTargetDiv, sidebarLinks, iSideBarLinks, navLessonTitle);
         }
 
-        el.addEventListener("focus", () => {
+        el.addEventListener("focus", (e) => {
             focusZone = 'sidebar';
-            lastFocusedLink = el;
+            lastFocusedLink = e.target;
             if (!suppressIndexUpdate) {
                 iSideBarLinks = [...sidebarLinks].indexOf(el);
             }
@@ -114,8 +116,14 @@ export function initKeyboardNav({
                     mainTargetDiv.focus();
                 }
                 lastClickedLink = e.target;
-            } else if (key === 's' && copyCodesStepFocused) {
-                sidebarBtn.focus();
+            } else if (key === 's' ) {
+                if (copyCodesStepFocused){
+                    // sidebarBtn.focus();
+                }else {
+                    e.preventDefault()
+                    // sidebarBtn.focus()
+                    console.log(sidebarBtn)
+                }
             } else
             if (key === 'm') {
                 mainTargetDiv.focus();
@@ -124,7 +132,6 @@ export function initKeyboardNav({
             }
         });
     });
-
     // --- End/Prev lesson buttons ---
     endNxtLessonBtn.addEventListener('click', e => {
         e.preventDefault();
@@ -155,17 +162,14 @@ export function initKeyboardNav({
             mKeyFocusOrder();
         }
     });
-
     prevLessonBtn.addEventListener('click', e => {
         iSideBarLinks = (iSideBarLinks - 1 + sidebarLinks.length) % sidebarLinks.length;
         deHighlightSideBarLink();
         sidebarLinks[iSideBarLinks].click();
     });
-
     function deHighlightSideBarLink() {
         sidebarLinks.forEach(el => el.classList.remove('hlight'));
     }
-
     // --- Helper functions ---
     function sKeyFocusOrder() {
         if (sidebar.classList.contains('expand')){
@@ -175,7 +179,6 @@ export function initKeyboardNav({
         else if (lastFocusedLink) lastFocusedLink.focus();
         else sidebarLinks[0].focus();
     }
-
     function mKeyFocusOrder(e) {
         const steps = document.querySelectorAll('.step-float');
         // This block below isn't really working, logic is in step-txt??
@@ -225,7 +228,6 @@ export function initKeyboardNav({
         }
         // console.log(dropDownFocused)
     }
-
     // --- Global key handling ---
     addEventListener("keydown", e => {
         const key = e.key.toLowerCase();
@@ -237,7 +239,7 @@ export function initKeyboardNav({
                     focusZone = "sidebar";
                     suppressIndexUpdate = true;
                     iSideBarLinks = 0;
-                    sidebarLinks[iSideBarLinks].focus();
+                    sidebarLinks[0].focus();
                     suppressIndexUpdate = false;
                     break;
                 }
@@ -245,7 +247,7 @@ export function initKeyboardNav({
                     if (mainContainer.classList.contains('collapsed')) {
                         mainContainer.classList.remove('collapsed');
                     }
-                    sKeyFocusOrder();
+                    // sKeyFocusOrder();
                 }
                 if (key === 'm') {
                     focusZone = 'main';
@@ -253,14 +255,11 @@ export function initKeyboardNav({
                 }
                 if (!isNaN(key)) numberShortcut(key);
                 break;
-
             case "sidebar":
                 // IMPORTANT: no headerElementsFocus here (prevents 'a' from being hijacked)
                 headerElementsFocus(key,e)
                 
                 if (key === 'f') {
-                    
-                        
                     if(document.activeElement.classList.contains('drop-down')){
                        const sidebarLinkLi = document.activeElement.parentElement 
                        const childUl = sidebarLinkLi.querySelector('ul li ul')
@@ -276,21 +275,19 @@ export function initKeyboardNav({
                            dropDowns[iDropDowns].focus()
                            return
                        }
-                    
-                    
                     suppressIndexUpdate = true;
                     if (e.target == sidebarBtn) {
-                        iSideBarLinks = 0;
+                        // iSideBarLinks = 0;
                         sidebarLinks[0].focus();
                     } else {
-                        
-                        
-                        iSideBarLinks = (iSideBarLinks === -1) ? 0 : (iSideBarLinks + 1) % sidebarLinks.length;
-                        sidebarLinks[iSideBarLinks].focus();
-                        
-
+                        // iSideBarLinks = (iSideBarLinks === -1) ? 0 : (iSideBarLinks + 1) % sidebarLinks.length;
+                        // sidebarLinks[iSideBarLinks].focus();
                     }
                     suppressIndexUpdate = false;
+                    }
+                    if(e.target.id == 'sidebarBtn'){
+                        console.log('hre')
+                        sidebarLinks[0].focus();
                     }
                 } else if (key === 'a') {
                     if(dropDownFocused){
@@ -314,10 +311,20 @@ export function initKeyboardNav({
                 } else if (key === 's') {
                     denlargeAllImages();
                     if (e.target == sidebarBtn) {
-                        if (lastClickedLink) lastClickedLink.focus();
+                        if (lastClickedLink) {
+                            lastClickedLink.focus();
+                        } else {
+                            console.log('here')
+                            lastFocusedLink.focus()
+                        }
                     }
-                    if (e.target === lastClickedLink) sidebarBtn.focus();
+                    if (e.target === lastClickedLink || e.target === lastFocusedLink){
+                        sidebarBtn.focus();
+                    } 
                     else if (lastClickedLink) lastClickedLink.focus();
+                    else {
+                        // sidebarBtn.focus()
+                    }
                 } else if (!isNaN(key)) numberShortcut(key);
                 break;
 
@@ -363,9 +370,7 @@ export function initKeyboardNav({
             // denlargeAllImages({ allImgs });
         }
     }, true); // use capture so it fires before bubbling stops
-
 }
-
 export function changeTutorialLink(targetLink) {
     const vidBase = targetLink.getAttribute("data-video");
     const ts = targetLink.getAttribute("data-timestamp");
