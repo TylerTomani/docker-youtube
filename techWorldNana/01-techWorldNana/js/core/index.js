@@ -1,9 +1,9 @@
 // index.js
-import { initKeyboardNav,sidebarLinks } from "../nav/keyboard-nav.js";
+import { initKeyboardNav,sideBarLinks } from "../nav/keyboard-nav.js";
 
 import { getPageHeader, getPageHeaderLinks, getNavLessonTitle, getDarkModeBtn, getSideBar, getSideBarBtn, initSideBarLinks, getMainTargetDiv, getMainContainer } from "../utils/dom-utils.js";
-import { toggleSidebar } from "../ui/toggle-sidebar.js";
-import { dragHideSidebar } from "../ui/drag-hide-sidebar.js";
+import { toggleSidebar } from "../ui/toggle-sideBar.js";
+import { dragHideSidebar } from "../ui/drag-hide-sideBar.js";
 import { injectContent } from "../core/inject-content.js";
 document.addEventListener("DOMContentLoaded", () => {
     const homePagelink = document.querySelector('#homePagelink')
@@ -11,8 +11,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const pageHeaderLinks = getPageHeaderLinks();
     const navLessonTitle = getNavLessonTitle();
     const darkModeBtn = getDarkModeBtn();
-    const sidebar = getSideBar();
-    const sidebarBtn = getSideBarBtn();
+    const sideBar = getSideBar();
+    const sideBarBtn = getSideBarBtn();
     
     const mainTargetDiv = getMainTargetDiv();
     const mainContainer = getMainContainer();
@@ -20,9 +20,9 @@ document.addEventListener("DOMContentLoaded", () => {
     
 
 
-    // Initialize sidebar toggle and drag
-    toggleSidebar(navLessonTitle, sidebar, sidebarBtn, mainContainer);
-    dragHideSidebar(mainContainer, sidebar);
+    // Initialize sideBar toggle and drag
+    toggleSidebar(navLessonTitle, sideBar, sideBarBtn, mainContainer);
+    dragHideSidebar(mainContainer, sideBar);
 
     // Initialize keyboard navigation
     initKeyboardNav({
@@ -30,27 +30,27 @@ document.addEventListener("DOMContentLoaded", () => {
         pageHeaderLinks: getPageHeaderLinks(),
         darkModeBtn: getDarkModeBtn(),
         navLessonTitle: navLessonTitle,
-        sidebar: getSideBar(),
-        sidebarBtn: sidebarBtn,
-        // sidebarLinks: Array.from(initSideBarLinks()), // <-- convert NodeList to array
+        sideBar: getSideBar(),
+        sideBarBtn: sideBarBtn,
+        // sideBarLinks: Array.from(initSideBarLinks()), // <-- convert NodeList to array
         mainTargetDiv: getMainTargetDiv(),
         mainContainer: mainContainer
     });
 
     // Initial content load
-    const initialLink = sidebarLinks.find(el => el.hasAttribute("autofocus")) ;
+    const initialLink = sideBarLinks.find(el => el.hasAttribute("autofocus")) ;
     if (initialLink) {
         initialLink.focus();
         initialLink.removeAttribute('autofocus')
         // Load initial content into mainTargetDiv
         // import("../core/inject-content.js").then(module => {
-        //     module.injectContent(initialLink.href, mainTargetDiv, sidebarLinks, sidebarLinks.indexOf(initialLink), navLessonTitle);
+        //     module.injectContent(initialLink.href, mainTargetDiv, sideBarLinks, sideBarLinks.indexOf(initialLink), navLessonTitle);
         // });
-        injectContent(initialLink.href, mainTargetDiv, sidebarLinks, sidebarLinks.indexOf(initialLink), navLessonTitle);
+        injectContent(initialLink.href, mainTargetDiv, sideBarLinks, sideBarLinks.indexOf(initialLink), navLessonTitle);
     }
 
     else {
-        injectContent('home-page.html', mainTargetDiv, sidebarLinks, sidebarLinks.indexOf(initialLink), navLessonTitle);
+        injectContent('home-page.html', mainTargetDiv, sideBarLinks, sideBarLinks.indexOf(initialLink), navLessonTitle);
         
     }
 });
