@@ -193,16 +193,19 @@ export function handleStepKeys(key, e, mainTargetDiv) {
         } else {
             const stepFloat = getStepFloat(e.target)
             const copyCodes = stepFloat.querySelectorAll('.copy-code')
-            if(copyCodes.length > 1){
-                let intKey = parseInt(key)
-                copyCodes[intKey - 1].focus()
-            } else {
-                const index = parseInt(key, 10) - 1;
-                if (index >= 0 && index < steps.length) {
-                    iStep = index;
-                    steps[iStep].focus();
-                    lastStep = steps[iStep];
-                } 
+            if(copyCodes){
+
+                if(copyCodes.length > 1){
+                    let intKey = parseInt(key)
+                    copyCodes[intKey - 1].focus()
+                } else {
+                    const index = parseInt(key, 10) - 1;
+                    if (index >= 0 && index < steps.length) {
+                        iStep = index;
+                        steps[iStep].focus();
+                        lastStep = steps[iStep];
+                    } 
+                }
             }
         }
     }
