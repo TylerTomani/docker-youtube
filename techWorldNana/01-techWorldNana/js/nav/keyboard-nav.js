@@ -10,7 +10,7 @@ export const endNxtLessonBtn = document.querySelector('#endNxtLessonBtn');
 const prevLessonBtn = document.querySelector('#prevLessonBtn');
 export const tutorialLink = document.querySelector('#tutorialLink');
 export const sidebarLinks = Array.from(document.querySelectorAll('.sidebar-links-ul a'));
-export const sidebarLinksUlLiAs = Array.from(document.querySelectorAll('.sidebar-links-ul li ul li a'));
+export const subSidebarLinks = Array.from(document.querySelectorAll('.sidebar-links-ul li ul li a'));
 import { dropDowns } from "../ui/drop-down.js";
 let dropDownFocused = true
 let iDropDowns = 0
@@ -22,7 +22,7 @@ dropDowns.forEach(el => {
         // console.log(iDropDowns)
     })
 })
-sidebarLinksUlLiAs.forEach(el => {
+subSidebarLinks.forEach(el => {
     el.addEventListener('focus', e => {
         dropDownFocused = false
     })
@@ -72,6 +72,7 @@ export function initKeyboardNav({
         }
         if(key === 'f'){
             e.preventDefault()
+            console.log('jsdkfj')
             iSideBarLinks = 0
             sidebarLinks[0].focus()
         }
@@ -269,21 +270,18 @@ export function initKeyboardNav({
                            dropDownFocused = false
                            firstLiInUl.focus()
                            return
-                       } else {
+                       }else {
                            // console.log(dropDowns[iDropDowns])
-                           iDropDowns = (iDropDowns + 1) % dropDowns.length
-                           dropDowns[iDropDowns].focus()
+                            if (e.target == sidebarBtn) {
+                                sidebarLinks[0].focus()
+                            }else {
+                                iDropDowns = (iDropDowns + 1) % dropDowns.length
+                                dropDowns[iDropDowns].focus()
+                           }
                            return
                        }
-                    suppressIndexUpdate = true;
-                    if (e.target == sidebarBtn) {
-                        // iSideBarLinks = 0;
-                        sidebarLinks[0].focus();
-                    } else {
-                        // iSideBarLinks = (iSideBarLinks === -1) ? 0 : (iSideBarLinks + 1) % sidebarLinks.length;
-                        // sidebarLinks[iSideBarLinks].focus();
-                    }
-                    suppressIndexUpdate = false;
+                    // suppressIndexUpdate = true;
+                    // suppressIndexUpdate = false;
                     }
                     if(e.target.id == 'sidebarBtn'){
                         console.log('hre')
