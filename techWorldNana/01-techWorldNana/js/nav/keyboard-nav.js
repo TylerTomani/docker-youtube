@@ -39,14 +39,13 @@ subSidebarLinks.forEach(el => {
         const parentUl = e.target.closest('ul')
         const currentSubSidebarLinksAs = parentUl.querySelectorAll('li a')
         if(key === 'f'){
+            // console.log(parentUl)
             if(subSideBarLinksFocus){
                 iSubSideBarLinks = (iSubSideBarLinks + 1) % currentSubSidebarLinksAs.length
                 currentSubSidebarLinksAs[iSubSideBarLinks].focus()
             }
         }
         if(key === 'a'){
-            const parentUl = e.target.closest('ul')
-            const currentSubSidebarLinksAs = parentUl.querySelectorAll('li a')
             console.log(subSideBarLinksFocus)
             console.log(currentSubSidebarLinksAs[iSubSideBarLinks])
             if(subSideBarLinksFocus){
@@ -258,7 +257,6 @@ export function initKeyboardNav({
                        const sideBarLinkLi = document.activeElement.parentElement 
                        const childUl = sideBarLinkLi.querySelector('ul li ul')
                        if(!childUl.classList.contains('hide')){
-                           console.log('here')
                            const firstLiInUl = childUl.querySelector('li a')
                            dropDownFocused = false
                            firstLiInUl.focus()
@@ -277,20 +275,41 @@ export function initKeyboardNav({
                         sideBarLinks[0].focus();
                     }
                 } else if (key === 'a') {
-                    if(dropDownFocused){
-                        e.preventDefault()
-                        e.stopPropagation()
-                        iDropDowns = (iDropDowns - 1 + dropDowns.length) % dropDowns.length
-                        dropDowns[iDropDowns].focus()
-                        return
-                    } else {
-                        e.preventDefault();
-                        e.stopPropagation();
-                        iSideBarLinks = (iSideBarLinks === -1)
-                            ? sideBarLinks.length - 1
-                            : (iSideBarLinks - 1 + sideBarLinks.length) % sideBarLinks.length;
-                        sideBarLinks[iSideBarLinks].focus();
+                    if (document.activeElement.classList.contains('drop-down')) {
+                        const sideBarLinkLi = document.activeElement.parentElement
+                        const childUl = sideBarLinkLi.querySelector('ul li ul')
+                        if (!childUl.classList.contains('hide')) {
+                            const firstLiInUl = childUl.querySelector('li a')
+                            dropDownFocused = false
+                            firstLiInUl.focus()
+                            return
+                        } else {
+                            if (e.target == sideBarBtn) {
+                                lastClickedLink.focus()
+                            } else {
+                                iDropDowns = (iDropDowns - 1 + dropDowns.length) % dropDowns.length
+                                dropDowns[iDropDowns].focus()
+                            }
+                            return
+                        }
                     }
+                    // if((document.activeElement == ))
+                    console.log()
+                    // if(dropDownFocused){
+                    //     e.preventDefault()
+                    //     e.stopPropagation()
+                    //     iDropDowns = (iDropDowns - 1 + dropDowns.length) % dropDowns.length
+                    //     dropDowns[iDropDowns].focus()
+                    //     return
+                    // } else {
+                    //     e.preventDefault();
+                    //     e.stopPropagation();
+                    //     iSideBarLinks = (iSideBarLinks === -1)
+                    //         ? sideBarLinks.length - 1
+                    //         : (iSideBarLinks - 1 + sideBarLinks.length) % sideBarLinks.length;
+                    //     sideBarLinks[iSideBarLinks].focus();
+                    // }
+                    
                 } else if (key === 'm') {
                     mKeyFocusOrder(e);
                 } else if (key === 's') {
