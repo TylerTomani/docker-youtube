@@ -1,4 +1,4 @@
-// drop-downs.js
+// drop-down.js
 export const dropDowns = document.querySelectorAll('.drop-down')
 export function initDropDowns() {
     if (!document.listenersAdded) {
