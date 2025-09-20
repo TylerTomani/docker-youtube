@@ -19,6 +19,8 @@ let iSideBarLinks = 0;
 let iSubSideBarLinks = 0;
 let subSideBarLinksFocus = false;
 let currentSubSidebarLinksAs = null
+
+
 dropDowns.forEach(el => {
     el.addEventListener('focus', e => {
         dropDownFocused = true
@@ -393,3 +395,12 @@ export function changeTutorialLink(targetLink) {
         tutorialLink.href = vidHref;
     }
 }
+// No idea what happened, had to put eventListener on tutorialLink
+tutorialLink.addEventListener('keydown', e => {
+    let key = e.key.toLowerCase()
+    if (key === 'enter') {
+        console.log('tutorialLink')
+        window.open(e.target.href, '_blank')
+
+    }
+})
