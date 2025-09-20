@@ -18,6 +18,7 @@ let iDropDowns = 0
 let iSideBarLinks = 0;
 let iSubSideBarLinks = 0;
 let subSideBarLinksFocus = false;
+let currentSubSidebarLinksAs = null
 dropDowns.forEach(el => {
     el.addEventListener('focus', e => {
         dropDownFocused = true
@@ -38,7 +39,8 @@ subSidebarLinks.forEach(el => {
             dropDown.focus()
         }
         const parentUl = e.target.closest('ul')
-        const currentSubSidebarLinksAs = parentUl.querySelectorAll('li a')
+        currentSubSidebarLinksAs = parentUl.querySelectorAll('li a')
+        
         if(key === 'f'){
             // console.log(parentUl)
             if(subSideBarLinksFocus){
@@ -57,8 +59,9 @@ subSidebarLinks.forEach(el => {
         }
         if(!isNaN(key)){
             const intKey = parseInt(key)
-            console.log(intKey)
-            currentSubSidebarLinksAs[intKey - 1]
+            
+            currentSubSidebarLinksAs[intKey - 1].focus()
+
         }
     })
 })
@@ -222,10 +225,11 @@ export function initKeyboardNav({
         }
     }
     function numberShortcut(key) {
-        const index = parseInt(key) - 1;
+        const intKey = parseInt(key) - 1;
+        // This might be unnecessary, maybe put logic in dropDowns.forEach el.addEventListener('keydown')??????
         if(dropDownFocused){
-            dropDowns[index].focus()
-        }
+            dropDowns[intKey].focus()
+        } 
     }
     // --- Global key handling ---
     addEventListener("keydown", e => {
