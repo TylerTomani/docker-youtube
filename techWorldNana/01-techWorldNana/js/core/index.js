@@ -1,4 +1,5 @@
 // index.js
+// THIS CODE IS AWFUL, SO Complicated Unnecessarily SO
 import { initKeyboardNav,sideBarLinks } from "../nav/keyboard-nav.js";
 
 import { getPageHeader, getPageHeaderLinks, getNavLessonTitle, getDarkModeBtn, getSideBar, getSideBarBtn, initSideBarLinks, getMainTargetDiv, getMainContainer } from "../utils/dom-utils.js";

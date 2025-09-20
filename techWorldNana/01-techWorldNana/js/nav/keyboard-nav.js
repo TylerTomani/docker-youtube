@@ -1,4 +1,5 @@
 // keyboard-nav.js
+// THIS is BAD, BIGGEST Problemo is sideBarLinks is the same as dropDowns
 import { injectContent } from "../core/inject-content.js";
 import { copyCodesStepFocused, handleStepKeys, lastStep } from "./step-txt.js";
 import { denlargeAllImages } from "./step-txt.js";
@@ -41,6 +42,7 @@ subSidebarLinks.forEach(el => {
         if(key === 'f'){
             // console.log(parentUl)
             if(subSideBarLinksFocus){
+                // console.log(console.log())
                 iSubSideBarLinks = (iSubSideBarLinks + 1) % currentSubSidebarLinksAs.length
                 currentSubSidebarLinksAs[iSubSideBarLinks].focus()
             }
@@ -95,8 +97,8 @@ export function initKeyboardNav({
         }
         if(key === 'f'){
             e.preventDefault()
-            iSideBarLinks = 0
-            sideBarLinks[0].focus()
+            iDropDowns = 0
+            dropDowns[0].focus()
         }
     });
     // --- Sidebar links ---
@@ -253,26 +255,28 @@ export function initKeyboardNav({
                 // IMPORTANT: no headerElementsFocus here (prevents 'a' from being hijacked)
                 headerElementsFocus(key,e)
                 if (key === 'f') {
-                    if(document.activeElement.classList.contains('drop-down')){
+                    if(document.activeElement.classList.contains('drop-down') ){
+                    
                        const sideBarLinkLi = document.activeElement.parentElement 
                        const childUl = sideBarLinkLi.querySelector('ul li ul')
+                        if (e.target == sideBarBtn) {
+                            dropDowns[0].focus()
+                            return
+                        } else {
+                            iDropDowns = (iDropDowns + 1) % dropDowns.length
+                            dropDowns[iDropDowns].focus()
+                        }
                        if(!childUl.classList.contains('hide')){
                            const firstLiInUl = childUl.querySelector('li a')
                            dropDownFocused = false
                            firstLiInUl.focus()
                            return
                        }else {
-                            if (e.target == sideBarBtn) {
-                                sideBarLinks[0].focus()
-                            }else {
-                                iDropDowns = (iDropDowns + 1) % dropDowns.length
-                                dropDowns[iDropDowns].focus()
-                           }
                            return
                        }
                     }
                     if(e.target.id == 'sideBarBtn'){
-                        sideBarLinks[0].focus();
+                        dropDowns[0].focus();
                     }
                 } else if (key === 'a') {
                     if (document.activeElement.classList.contains('drop-down')) {
@@ -379,6 +383,7 @@ export function changeTutorialLink(targetLink) {
     const vidBase = targetLink.getAttribute("data-video");
     const ts = targetLink.getAttribute("data-timestamp");
     let vidHref = vidBase;
+
     if (ts) {
         vidHref += (vidBase.includes("?") ? "&" : "?") + `t=${ts}s`;
         tutorialLink.href = vidHref;
