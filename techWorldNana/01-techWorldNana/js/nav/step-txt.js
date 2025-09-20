@@ -161,10 +161,6 @@ export function initStepNavigation(mainTargetDiv) {
                 const stepFloat = getStepFloat(e.target.parentElement)
                 const vid = stepFloat.querySelector('video')
                 console.log(e.target)
-                let key = e.key.toLowerCase()
-                if(key === 'm'){
-                    stepFloat.focus()
-                }
                 toggleVideoSize({ vid, e, steps, stepFloat })
                 handleVideo({ vid, e, steps, allVids })
             })
@@ -193,19 +189,16 @@ export function handleStepKeys(key, e, mainTargetDiv) {
         } else {
             const stepFloat = getStepFloat(e.target)
             const copyCodes = stepFloat.querySelectorAll('.copy-code')
-            if(copyCodes){
-
-                if(copyCodes.length > 1){
-                    let intKey = parseInt(key)
-                    copyCodes[intKey - 1].focus()
-                } else {
-                    const index = parseInt(key, 10) - 1;
-                    if (index >= 0 && index < steps.length) {
-                        iStep = index;
-                        steps[iStep].focus();
-                        lastStep = steps[iStep];
-                    } 
-                }
+            if(copyCodes.length > 1){
+                let intKey = parseInt(key)
+                copyCodes[intKey - 1].focus()
+            } else {
+                const index = parseInt(key, 10) - 1;
+                if (index >= 0 && index < steps.length) {
+                    iStep = index;
+                    steps[iStep].focus();
+                    lastStep = steps[iStep];
+                } 
             }
         }
     }

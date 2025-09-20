@@ -1,0 +1,41 @@
+
+/* Great Background color
+/* background:rgb(0, 133, 153);  */
+/* main.css */
+@import url('home-page.css');
+@import url('darkMode.css');
+@import url('responsive.css');
+/* Components */
+@import url('./copyCode.css');
+@import url('components/sidebar.css');
+@import url('components/imgsVideos.css');
+@import url('components/dropDown.css');
+/* Utilities */
+@import url('utilities/borders.css');
+@import url('utilities/colors.css');
+@import url('utilities/codeColors.css');
+@import url('utilities/effects.css');
+@import url('utilities/layout.css');
+@import url('utilities/position.css');
+@import url('utilities/sizing.css');
+@import url('utilities/spacing.css');
+@import url('utilities/text.css');
+@import url('utilities/zindex.css');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+

@@ -1,10 +1,8 @@
 // index.js
-// THIS CODE IS AWFUL, SO Complicated Unnecessarily SO
-import { initKeyboardNav,sideBarLinks } from "../nav/keyboard-nav.js";
-
+import { initKeyboardNav } from "../nav/keyboard-nav.js";
 import { getPageHeader, getPageHeaderLinks, getNavLessonTitle, getDarkModeBtn, getSideBar, getSideBarBtn, initSideBarLinks, getMainTargetDiv, getMainContainer } from "../utils/dom-utils.js";
-import { toggleSidebar } from "../ui/toggle-sideBar.js";
-import { dragHideSidebar } from "../ui/drag-hide-sideBar.js";
+import { toggleSidebar } from "../ui/toggle-sidebar.js";
+import { dragHideSidebar } from "../ui/drag-hide-sidebar.js";
 import { injectContent } from "../core/inject-content.js";
 document.addEventListener("DOMContentLoaded", () => {
     const homePagelink = document.querySelector('#homePagelink')
@@ -12,18 +10,18 @@ document.addEventListener("DOMContentLoaded", () => {
     const pageHeaderLinks = getPageHeaderLinks();
     const navLessonTitle = getNavLessonTitle();
     const darkModeBtn = getDarkModeBtn();
-    const sideBar = getSideBar();
-    const sideBarBtn = getSideBarBtn();
-    
+    const sidebar = getSideBar();
+    const sidebarBtn = getSideBarBtn();
+    const sidebarLinks = Array.from(initSideBarLinks());
     const mainTargetDiv = getMainTargetDiv();
     const mainContainer = getMainContainer();
     
     
 
 
-    // Initialize sideBar toggle and drag
-    toggleSidebar(navLessonTitle, sideBar, sideBarBtn, mainContainer);
-    dragHideSidebar(mainContainer, sideBar);
+    // Initialize sidebar toggle and drag
+    toggleSidebar(navLessonTitle, sidebar, sidebarBtn, mainContainer);
+    dragHideSidebar(mainContainer, sidebar);
 
     // Initialize keyboard navigation
     initKeyboardNav({
@@ -31,27 +29,27 @@ document.addEventListener("DOMContentLoaded", () => {
         pageHeaderLinks: getPageHeaderLinks(),
         darkModeBtn: getDarkModeBtn(),
         navLessonTitle: navLessonTitle,
-        sideBar: getSideBar(),
-        sideBarBtn: sideBarBtn,
-        // sideBarLinks: Array.from(initSideBarLinks()), // <-- convert NodeList to array
+        sidebar: getSideBar(),
+        sidebarBtn: sideBarBtn,
+        sidebarLinks: Array.from(initSideBarLinks()), // <-- convert NodeList to array
         mainTargetDiv: getMainTargetDiv(),
         mainContainer: mainContainer
     });
 
     // Initial content load
-    const initialLink = sideBarLinks.find(el => el.hasAttribute("autofocus")) ;
+    const initialLink = sidebarLinks.find(el => el.hasAttribute("autofocus")) ;
     if (initialLink) {
         initialLink.focus();
         initialLink.removeAttribute('autofocus')
         // Load initial content into mainTargetDiv
         // import("../core/inject-content.js").then(module => {
-        //     module.injectContent(initialLink.href, mainTargetDiv, sideBarLinks, sideBarLinks.indexOf(initialLink), navLessonTitle);
+        //     module.injectContent(initialLink.href, mainTargetDiv, sidebarLinks, sidebarLinks.indexOf(initialLink), navLessonTitle);
         // });
-        injectContent(initialLink.href, mainTargetDiv, sideBarLinks, sideBarLinks.indexOf(initialLink), navLessonTitle);
+        injectContent(initialLink.href, mainTargetDiv, sidebarLinks, sidebarLinks.indexOf(initialLink), navLessonTitle);
     }
 
     else {
-        injectContent('home-page.html', mainTargetDiv, sideBarLinks, sideBarLinks.indexOf(initialLink), navLessonTitle);
+        injectContent('home-page.html', mainTargetDiv, sidebarLinks, sidebarLinks.indexOf(initialLink), navLessonTitle);
         
     }
 });

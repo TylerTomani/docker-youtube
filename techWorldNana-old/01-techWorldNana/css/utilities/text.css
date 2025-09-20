@@ -1,0 +1,27 @@
+.page-header .header-col-left>.header-nav a {text-decoration: none;}
+.sidebar-links-ul li a{text-decoration: none;}
+
+#sideBarBtn {
+    font-size: 1.45rem;
+}
+main.main-container.collapsed #sideBarBtn {
+    font-size: 2rem;
+}
+
+.step-txt ul li {line-height: 1.5;}
+
+
+.copy-code{
+    font-family: monospace;
+}
+
+p>code {
+    font-family: bold;
+    font-weight: 888;
+}
+.txt125 {
+    font-size: 150%;
+}
+.ls1px{letter-spacing: 1px;}
+.ls2px{letter-spacing: 5px;}
+.ls5px{letter-spacing: 5px;}

@@ -1,0 +1,28 @@
+/* position.css */
+
+.page-wrapper {
+    position: relative;
+}
+/* Main content scrollable */
+main.main-container {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+#targetDiv{
+    position: relative;
+}
+#targetDiv>.main-container>header {
+    position: sticky;
+    top: 0;
+}
+#navLessonTitle {
+    /* position: sticky;
+    top: 0; */
+}
+.lesson-btns-container {
+    position: fixed;
+    bottom: 0;
+}
+/* Lessons stepTxt injectContent() */
+
