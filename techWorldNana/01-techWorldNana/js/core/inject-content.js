@@ -4,43 +4,27 @@ import { initDropDowns } from "../ui/drop-down.js";
 import { addCopyCode } from "../ui/copy-code.js";
 
 export function injectContent(href, mainTargetDiv, sidebarLinks, iSideBarLinks, navLessonTitle, callback) {
-    // Build an absolute URL so you can see what the browser is really trying to load
-    const url = new URL(href, window.location.href).toString();
-    console.log("[injectContent] Fetching:", url);
-
-    fetch(url)
+    fetch(href)
         .then(response => {
-            console.log("[injectContent] Response:", response.status, response.statusText);
             if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
             return response.text();
         })
         .then(html => {
-            console.log("[injectContent] Injecting HTML into mainTargetDiv");
-            if (!mainTargetDiv) {
-                console.error("[injectContent] mainTargetDiv is null! Check your HTML for #mainTargetDiv");
-                return;
-            }
-
+            // Insert HTML into the main container
             mainTargetDiv.innerHTML = html;
-            initDropDowns();
-
+            initDropDowns()
             // Update nav lesson title if available
             const parser = new DOMParser();
             const doc = parser.parseFromString(html, 'text/html');
             const headerH3 = doc.querySelector('#targetHeaderh3');
-            if (headerH3 && navLessonTitle) {
-                navLessonTitle.textContent = headerH3.textContent;
-                console.log("[injectContent] Updated navLessonTitle:", headerH3.textContent);
-            }
-
+            if (headerH3 && navLessonTitle) navLessonTitle.textContent = headerH3.textContent;
             // Initialize step navigation & copy-code buttons
             initStepNavigation(mainTargetDiv, sidebarLinks, iSideBarLinks);
             addCopyCode();
-
             // Optional callback after injection
             if (typeof callback === "function") callback();
         })
         .catch(err => {
-            console.error("[injectContent] Failed to load content:", err);
+            console.error('Failed to load content:', err);
         });
 }
